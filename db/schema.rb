@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007173945) do
+ActiveRecord::Schema.define(:version => 20131007191045) do
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20131007173945) do
     t.date     "completion_date"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "proofs", :force => true do |t|
+    t.integer  "micro_goal_id"
+    t.text     "lesson"
+    t.binary   "picture"
+    t.boolean  "completed"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
