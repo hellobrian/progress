@@ -19,4 +19,5 @@ class Goal < ActiveRecord::Base
 
   belongs_to :user
   has_many :micro_goals
+  has_many :proofs, through: :micro_goals
 end
