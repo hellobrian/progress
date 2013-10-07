@@ -18,4 +18,5 @@ class Goal < ActiveRecord::Base
   validates :motivation, length: { maximum: 255 }
 
   belongs_to :user
+  has_many :micro_goals
 end

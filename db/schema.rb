@@ -11,12 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007191045) do
+ActiveRecord::Schema.define(:version => 20131007191215) do
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "motivation"
+    t.date     "completion_date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "micro_goals", :force => true do |t|
+    t.integer  "goal_id"
+    t.string   "title"
     t.date     "completion_date"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
