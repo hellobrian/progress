@@ -27,6 +27,7 @@ group :test, :development do
 	gem 'factory_girl_rails'
 	gem 'capybara'
 	gem 'annotate'
+	gem 'faker'
 end
 
 # gem 'turbolinks'
