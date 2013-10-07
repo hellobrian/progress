@@ -1,0 +1,7 @@
+<% if current_user %>
+	Logged in as <%= current_user.email %>
+	<%= link_to 'Logout', logout_path, class: 'btn' %>
+<% else %>
+	<%= link_to 'Sign up', new_user_path, class: 'btn btn-primary' %>
+	<%= link_to 'Log in', login_path, class: 'btn' %>
+<% end %>

@@ -16,7 +16,7 @@
 
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  attr_accessible :first_name, :last_name, :email, :date_of_birth, :gender
+  attr_accessible :first_name, :last_name, :email, :date_of_birth, :gender, :password
 
   validates :first_name, :last_name, :date_of_birth, :gender, :email, presence: true
   validates :email, uniqueness: true
