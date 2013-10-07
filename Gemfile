@@ -26,6 +26,7 @@ group :test, :development do
 	gem 'letter_opener' # for mailers
 	gem 'factory_girl_rails'
 	gem 'capybara'
+	gem 'annotate'
 end
 
 # gem 'turbolinks'
