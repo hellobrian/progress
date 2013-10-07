@@ -22,4 +22,5 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :goals
+  has_many :micro_goals, through: :goals
 end
