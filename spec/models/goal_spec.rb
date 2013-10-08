@@ -9,6 +9,7 @@
 #  completion_date :date
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  verb            :string(255)
 #
 
 require 'spec_helper'

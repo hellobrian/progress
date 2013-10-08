@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: micro_goals
+#
+#  id              :integer          not null, primary key
+#  goal_id         :integer
+#  title           :string(255)
+#  completion_date :date
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 require 'spec_helper'
 
 describe MicroGoal do

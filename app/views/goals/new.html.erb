@@ -1,2 +1,32 @@
-<h1>Goals#new</h1>
-<p>Find me in app/views/goals/new.html.erb</p>
+<h1>YOUR NEW GOAL!!!!</h1>
+
+<%= form_for @goal do |f| %>
+  
+  <fieldset>
+    <legend><h2>I want to</h2></legend>
+    <% Goal::VERBS.each_with_index do |v,i| %>
+      <% if i == 0 %>
+        <%= f.label v %>
+        <%= f.radio_button :verb, v, checked: true %>
+      <% else %>
+        <%= f.label v %>
+        <%= f.radio_button :verb, v %>
+      <% end %>
+    <% end %>
+    <br>
+    <%= f.text_field :title, size: 140, placeholder: "eg. French" %>
+  </fieldset>
+
+  <fieldset>
+    <legend><h2>Why?</h2></legend>
+    <%= f.text_area :motivation, rows: 7, cols: 100 %>
+  </fieldset>
+
+  <fieldset>
+    <legend><h2>When will you achieve this goal?</h2></legend>
+    <%= f.date_select :completion_date %>
+  </fieldset>
+
+  <%= f.submit %>
+
+<% end %>
