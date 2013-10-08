@@ -1,4 +1,5 @@
 Progress::Application.routes.draw do
+
   root :to => 'welcome#index'
 
   resources :sessions, except: :index
@@ -7,10 +8,12 @@ Progress::Application.routes.draw do
     resources :goals
   end
 
+  resources :goals, only: :index
+
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

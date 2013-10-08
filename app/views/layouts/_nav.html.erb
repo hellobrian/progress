@@ -2,8 +2,9 @@
 <%= link_to 'Goals', goals_path, class: 'btn' %> 
 <% if current_user %>
 	Logged in as <%= current_user.email %>
-	<%= link_to 'My Goals', '#', class: 'btn' %> |
+	<%= link_to 'My Goals', user_goals_path(current_user.id), class: 'btn' %> |
   <%= link_to 'Logout', logout_path, class: 'btn' %>
+
 <% else %>
 	<%= link_to 'Sign up', new_user_path, class: 'btn btn-primary' %>
 	<%= link_to 'Log in', login_path, class: 'btn' %>
