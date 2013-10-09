@@ -11,7 +11,7 @@ class MicroGoalsController < ApplicationController
   end
 
   def new
-    @micro_goal = @goal.micro_goals.build
+    @micro_goal = @goal.micro_goals.new
   end
 
   def create
