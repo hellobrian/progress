@@ -1,11 +1,28 @@
 <h1>Log in</h1>
 
 <%= form_tag sessions_path, :method => :post do %>
-	<%= label_tag :email %>
-	<%= text_field_tag :email, params[:email] %>
-
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-	<br/>
-	<%= submit_tag "Log in" %>
+  <div class="row">
+    <div class="small-8">
+      <div class="row">
+        <div class="small-3 columns">
+          <%= label_tag 'email', 'Email', :class => 'right inline' %>
+        </div>
+        <div class="small-9 columns">
+          <%= text_field_tag 'email' %>
+          <!-- <input type="text" id="email" name="email"> -->
+        </div>
+        <div class="small-3 columns">
+          <%= label_tag 'password', 'Password', :class => 'right inline' %>
+        </div>
+        <div class="small-9 columns">
+          <%= password_field_tag 'password' %>
+          <!-- <input type="password" id="passowrd" name="password"> -->
+        </div>
+        <div class="small-9 columns">
+          <%= submit_tag "Log in", :class => "small button radius" %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 <% end %>
