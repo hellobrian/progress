@@ -19,7 +19,7 @@ class Goal < ActiveRecord::Base
   validates :motivation, length: { maximum: 255 }
 
   belongs_to :user
-  has_many :micro_goals
+  has_many :micro_goals, dependent: :destroy
   has_many :proofs, through: :micro_goals
 
   VERBS = %w[learn visit become stop start lose make solve improve meet build]

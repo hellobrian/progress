@@ -8,7 +8,7 @@ Progress::Application.routes.draw do
     resources :goals
   end
 
-  resources :goals, except: [:index]
+  resources :goals, only: [:index, :new, :create]
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"

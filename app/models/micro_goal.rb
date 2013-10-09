@@ -16,5 +16,5 @@ class MicroGoal < ActiveRecord::Base
   validates :title, :completion_date, presence: true
 
   belongs_to :goal
-  has_one :proof
+  has_one :proof, dependent: :destroy
 end

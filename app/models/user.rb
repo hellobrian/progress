@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :date_of_birth, :gender, :email, presence: true
   validates :email, uniqueness: true
 
-  has_many :goals
+  has_many :goals, dependent: :destroy
   has_many :micro_goals, through: :goals
 end
