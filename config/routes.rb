@@ -3,12 +3,18 @@ Progress::Application.routes.draw do
   root :to => 'welcome#index'
 
   resources :sessions, except: :index
+  resources :goals, only: [:index, :new, :create]
 
   resources :users, except: :index do
     resources :goals
+    resources :micro_goals, only: :index
   end
 
-  resources :goals, only: [:index, :new, :create]
+  resources :goals do
+    resources :micro_goals
+  end
+
+ 
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
