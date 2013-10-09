@@ -3,7 +3,12 @@
 <%= form_for [@goal, @micro_goal] do |f| %>
   <fieldset>
     <legend><h3>How are you gonna do it?</h3></legend>
-      
+      <%= f.text_field :title, placeholder: "microgoal1", size: 100  %> By: <%= f.date_select :completion_date %>
+
   </fieldset>
+
+<%= f.submit "add to your path" %>
+
+
 <% end %>
 
