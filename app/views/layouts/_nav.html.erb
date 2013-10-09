@@ -1,7 +1,10 @@
 <div class="fixed">
-  <nav class="top-bar">
+  <nav class="top-bar toggle-topbar">
     <ul class="title-area">
       <li class="name"><h1><%= link_to 'Progress', root_path %></h1></li>
+      <li class="toggle-topbar">
+        <a class="menu" href="#">Menu</a>
+      </li>
     </ul>
    
     <section class="top-bar-section">
@@ -13,8 +16,6 @@
         <li class="divider"></li>
         <li><%= link_to 'Explore Current Goals', goals_path %></li>
         <li class="divider"></li>
-        <li><%= link_to 'Add New Goal', new_goal_path %></li>
-        <li class="divider"></li>
         <li><%= link_to 'About Progress', '#' %></li>
 
         <% if current_user %>
@@ -22,13 +23,18 @@
           <li><%= link_to "#{current_user.first_name}'s Goals", 
             user_goals_path(current_user.id) %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Logout', logout_path, class: "has-button" %></li>
+          <li><%= link_to 'Logout', logout_path, class: "radius button" %></li>
         <% else %>
           <li class="divider"></li>
-          <li><%= link_to 'Sign up', new_user_path %></li>
+          <li><%= link_to 'Sign up', new_user_path, 
+            class: "medium secondary radius button" %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Log in', login_path, class: "has-button" %></li>
+          <li><%= link_to 'Log in', login_path, class: "radius button" %></li>
         <% end %>
+
+        <li class="divider"></li>
+        <li><%= link_to 'Add New Goal', new_goal_path, 
+          class: "success radius button" %></li>
        
       </ul>
     </section>
