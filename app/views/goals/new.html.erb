@@ -1,20 +1,33 @@
+<div class="goal-form-container">
 <h1>I want to (verb) (title) <- jQuery keyup event</h1>
 
-<%= form_for @goal do |f| %>
+<%= form_for @goal, :html => { :class => "custom"} do |f| %>
   
-  <fieldset>
+  <fieldset class="all-verbs">
     <legend><h3>I want to</h3></legend>
-    <% Goal::VERBS.each_with_index do |v,i| %>
-      <% if i == 0 %>
-        <%= f.label v %>
-        <%= f.radio_button :verb, v, checked: true %>
-      <% else %>
-        <%= f.label v %>
-        <%= f.radio_button :verb, v %>
+
+      <% Goal::VERBS.each_with_index do |v,i| %>
+        <% if i == 0 %>
+        
+          <%= f.label v %>
+          <%= f.radio_button :verb, v, checked: true, 
+          class: "radio_button" %>
+        
+        <% else %>
+        
+          <%= f.label v -%>
+          <%= f.radio_button :verb, v, class: "radio_button" %>
+        
+        <% end %>
       <% end %>
-    <% end %>
-    <br>
-    <%= f.text_field :title, size: 140, placeholder: "eg. French" %>
+
+    <div class="row">
+      <div class="large-12 columns">
+         <%= f.text_field :title, size: 140, placeholder: "eg. French", 
+         class: "text_field" %>
+      </div>
+    </div>
+   
   </fieldset>
 
   <fieldset>
@@ -27,7 +40,8 @@
     <%= f.date_select :completion_date %>
   </fieldset>
 
-  <%= f.submit %>
+  <%= f.button %>
 
 <% end %>
+</div>
 

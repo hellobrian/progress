@@ -10,13 +10,21 @@
     <section class="top-bar-section">
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to 'Home', root_path, class: "active" %></li>
+        <li><%= link_to 'Explore Current Goals', goals_path, class: "active" %></li>
+
         <li class="divider"></li>
-        <li><%= link_to 'How Progress Works', '#' %></li>
+        <li><%= link_to 'How Progress Works', "#" %></li>
+        
         <li class="divider"></li>
-        <li><%= link_to 'Explore Current Goals', goals_path %></li>
-        <li class="divider"></li>
-        <li><%= link_to 'About Progress', '#' %></li>
+        <li class="has-dropdown"><a href="#">About Us</a>
+          <ul class="dropdown">
+            
+            <li><%= link_to "Our Story", "#" %></li>
+            <li><%= link_to "Our Team", "#" %></li>
+            <li><%= link_to "Contact Us", "#" %></li>
+            
+          </ul>
+        </li>
 
         <% if current_user %>
           <li class="divider"></li>
@@ -28,7 +36,7 @@
           <li class="divider"></li>
           <li><%= link_to 'Sign up', new_user_path, 
             class: "medium secondary radius button" %></li>
-          <li class="divider"></li>
+          <!-- <li class="divider"></li> -->
           <li><%= link_to 'Log in', login_path, class: "radius button" %></li>
         <% end %>
 

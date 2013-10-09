@@ -22,7 +22,7 @@ class GoalsController < ApplicationController
   end
 
   def index
-    @goals
+    @goals = User.find(current_user.id).goals
   end
 
   def show

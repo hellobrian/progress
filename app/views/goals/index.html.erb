@@ -1,2 +1,10 @@
 <h1>Goals#index</h1>
-<p>Find me in app/views/goals/index.html.erb</p>
+
+
+<% @goals.each do |goal| %>
+  <p>
+     <%= (goal.verb).capitalize %>: <%= link_to (goal.title).capitalize, goal_path(goal.id) %> by: <%= goal.completion_date %>
+  </p>
+ 
+
+<% end %>

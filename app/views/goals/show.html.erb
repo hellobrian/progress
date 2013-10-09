@@ -1,12 +1,21 @@
-<h1><%= @goal.title.upcase %></h1>
-<p>Find me in app/views/goals/show.html.erb</p>
 
-<% @micro_goals.each do |m| %>
-<div class="microgoal">
-  <p>Micro goal title: <%= m.title %></p>
-  <p>Expected completion date: <%= m.completion_date %></p>
-  line
-</div>
-<% end %>
-<br>
-<%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %>
+<div class="goal-container">
+  
+    
+      <h4><%= @goal.user.first_name.titleize %> wants to <%= @goal.verb %></h4>
+      <h3><%= @goal.title.upcase %></h3>
+    
+  </div>
+  
+
+  <% @micro_goals.each do |m| %>
+  <div class="microgoal">
+    <p>Micro goal title: <%= m.title %></p>
+    <p>Expected completion date: <%= m.completion_date %></p>
+    line
+  </div>
+  <% end %>
+  <br>
+  <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %> |
+  <%= link_to "Back to Goals",  goals_path %>
+</div> 
