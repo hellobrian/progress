@@ -11,10 +11,19 @@ class MicroGoalsController < ApplicationController
   end
 
   def new
-
+    @micro_goal = @goal.micro_goals.build
   end
 
   def create
+    @micro_goal = MicroGoal.new(params[:micro_goal])
+    @micro_goal.goal_id = @goal.id
+
+    if @micro_goal.save 
+      redirect_to goal_path(@goal), :notice => "Successfully created MicroGoals"
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -29,6 +38,6 @@ class MicroGoalsController < ApplicationController
   private 
 
   def get_goal
-    @goal = current_user.goals.last
+    @goal = Goal.find(params[:goal_id])
   end
 end
