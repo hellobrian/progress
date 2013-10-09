@@ -1,32 +1,35 @@
 <div class="fixed">
   <nav class="top-bar">
     <ul class="title-area">
-      <li class="name"><h1>Progress</h1></li>
+      <li class="name"><h1><%= link_to 'Progress', root_path %></h1></li>
     </ul>
    
     <section class="top-bar-section">
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Home', root_path, class: "active" %></li>
         <li class="divider"></li>
-        <li><%= link_to 'Goals', goals_path %></li>
+        <li><%= link_to 'How Progress Works', '#' %></li>
         <li class="divider"></li>
-        <li><%= link_to 'New Goal', new_goal_path %></li>
+        <li><%= link_to 'Explore Current Goals', goals_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Add New Goal', new_goal_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'About Progress', '#' %></li>
 
         <% if current_user %>
           <li class="divider"></li>
-          <li><%= link_to 'My Goals', user_goals_path(current_user.id) %></li>
+          <li><%= link_to "#{current_user.first_name}'s Goals", 
+            user_goals_path(current_user.id) %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Logout', logout_path %></li>
-          <li class="divider"></li>
-          <li>Logged in as <%= current_user.email %></li>
+          <li><%= link_to 'Logout', logout_path, class: "has-button" %></li>
         <% else %>
           <li class="divider"></li>
           <li><%= link_to 'Sign up', new_user_path %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Log in', login_path %></li>
+          <li><%= link_to 'Log in', login_path, class: "has-button" %></li>
         <% end %>
-      
+       
       </ul>
     </section>
   </nav>
