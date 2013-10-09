@@ -22,10 +22,12 @@ class GoalsController < ApplicationController
   end
 
   def index
+    @goals
   end
 
   def show
     @goal = Goal.find(params[:id])
+    @micro_goals = @goal.micro_goals.sort_by &:completion_date  
   end
 
   def destroy

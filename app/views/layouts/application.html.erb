@@ -22,17 +22,19 @@
   </head>
 
   <body>
-    <%= render "layouts/nav" %>
-    
-    <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
-    <% end %>
+    <div class="">
+      <%= render "layouts/nav" %>
+      
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
 
-    <% if flash[:alert] %>
-      <p><%= flash[:alert] %></p>
-    <% end %>
-    
-    <%= yield %>
+      <% if flash[:alert] %>
+        <p><%= flash[:alert] %></p>
+      <% end %>
+      
+      <%= yield %>
+    </div>
 
     
     <%= javascript_include_tag "application" %>
