@@ -1,21 +1,30 @@
 
-<div class="goal-container">
-  
-    
-      <h4><%= @goal.user.first_name.titleize %> wants to <%= @goal.verb %></h4>
-      <h3><%= @goal.title.upcase %></h3>
-    
-  </div>
-  
+<h1 class="subheader"><%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:</h1>
+<h2 class="sub"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
 
-  <% @micro_goals.each do |m| %>
-  <div class="microgoal">
-    <p>Micro goal title: <%= m.title %></p>
-    <p>Expected completion date: <%= m.completion_date %></p>
-    line
+<div class="small-2 small-centered columns">
+  <ul class="small-block-grid-1">
+    <% @micro_goals.each do |m| %>
+      <li>
+        <div class="row">
+          <div class="small-10 small-centered columns">
+          <p><%= m.title %></p>
+          <p>Expected completion date: <%= m.completion_date %>
+          </p>
+          </div>
+        </div>
+      </li>
+      <div class="row">
+        <div class="small-1 small-centered columns">
+          <ul class="small-block-grid-1">
+            <li class="line"></li>
+            <li class="line"></li>
+            <li class="line"></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+   </ul>
   </div>
-  <% end %>
-  <br>
-  <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %> |
-  <%= link_to "Back to Goals",  goals_path %>
-</div> 
+<%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %> |
+<%= link_to "Back to Goals",  goals_path %> 

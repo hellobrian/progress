@@ -4,25 +4,20 @@
 // $blockquote-border: 1px solid #ddd;
 
 
-.goal-container{
-  width: 100%;
-  text-align: center;
-  background-color: #FFFCC4;
-  padding: 10px;
+// MicroGoal items
+
+ul.small-block-grid-1 li {
+  background-color: tomato;
+
 }
 
-h3, h4 {
-  width: 100%;
-  // padding-left: 10px;
-  // padding-right: 10px;
-  padding: 5px;
+ul.small-block-grid-1 li.line {
   background-color: black;
-  color: white;
-  margin: 0;
 }
 
-.microgoal {
-  border: 1px solid #ddd;
+div.columns p {
+  color: black;
+  text-align: center;
 }
 
 // NEW GOAL FORM
