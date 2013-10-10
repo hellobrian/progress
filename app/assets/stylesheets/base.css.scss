@@ -1,3 +1,25 @@
+// NAVBAR
+nav.top-bar.toggle-topbar ul.title-area li.name a.title,
+section.top-bar-section ul.right li a.nav {
+  &:hover {
+    background-color: #FF3800;
+  }
+}
+
+ul.right ul.dropdown li a:hover {
+  background-color: #009393;
+}
+
+ul.dropdown li a:hover {
+  margin-bottom: 0px;
+}
+
+ul.right li a.radius.button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
 .container {
   padding: 50px;
 }

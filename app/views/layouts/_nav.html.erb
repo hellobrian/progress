@@ -1,7 +1,7 @@
 <div class="fixed">
   <nav class="top-bar toggle-topbar">
     <ul class="title-area">
-      <li class="name"><h1><%= link_to 'Progress', root_path %></h1></li>
+      <li class="name"><h1><%= link_to 'Progress', root_path, class: "title" %></h1></li>
       <li class="toggle-topbar">
         <a class="menu" href="#">Menu</a>
       </li>
@@ -10,13 +10,13 @@
     <section class="top-bar-section">
       <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to 'Explore Current Goals', goals_path, class: "active" %></li>
+        <li><%= link_to 'Explore Current Goals', goals_path, class: "active nav" %></li>
 
         <li class="divider"></li>
-        <li><%= link_to 'How Progress Works', "#" %></li>
+        <li><%= link_to 'How Progress Works', "#", class: "nav" %></li>
         
         <li class="divider"></li>
-        <li class="has-dropdown"><a href="#">About Us</a>
+        <li class="has-dropdown"><a href="#" class="nav">About Us</a>
           <ul class="dropdown">
             
             <li><%= link_to "Our Story", "#" %></li>
@@ -29,7 +29,7 @@
         <% if current_user %>
           <li class="divider"></li>
           <li><%= link_to "#{current_user.first_name}'s Goals", 
-            user_goals_path(current_user.id) %></li>
+            user_goals_path(current_user.id), class: "nav" %></li>
           <li class="divider"></li>
           <li><%= link_to 'Logout', logout_path, class: "radius button" %></li>
         <% else %>

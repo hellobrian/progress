@@ -22,8 +22,9 @@
   </head>
 
   <body>
+    
+    <%= render "layouts/nav" %>
     <div class="container">
-      <%= render "layouts/nav" %>
       
       <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
