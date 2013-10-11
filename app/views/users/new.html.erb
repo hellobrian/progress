@@ -1,42 +1,55 @@
+<%= form_for @user, :html => { :class => "custom" } do |f| %>			
+	<% unless f.object.errors.empty? %>
+		<div class="alert alert-error">
+			<strong>Try again after fixing the following things:</strong><br/>
+			<ul>
+				<% f.object.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="row">	
 
-
-<%= form_for @user, :html => { :class => "custom" } do |f| %>
-	<div class="row">
-		<div class="container large-9 columns">
+		<div class="large-12 columns">
 			<h1>Sign Up</h1>
-			<% unless f.object.errors.empty? %>
-				<div class="alert alert-error">
-					<strong>Try again after fixing the following things:</strong><br/>
-					<ul>
-						<% f.object.errors.full_messages.each do |msg| %>
-							<li><%= msg %></li>
-						<% end %>
-					</ul>
-				</div>
-			<% end %>
+		</div>
 
-			<%= f.label :first_name %>
-			<%= f.text_field :first_name, autofocus: true %>
+		<div class="large-6 columns signup">
+			<fieldset class="signup">
+				<legend class="signup">Who are you?</legend>			
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name, autofocus: true %>
 
-			<%= f.label :last_name %>
-			<%= f.text_field :last_name %>
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %>
 
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+				<%= f.label :email, class: "email" %>
+				<%= f.text_field :email %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password %>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</fieldset>
+		</div>
 
-			<%= f.label :date_of_birth %>
-			<%= f.date_select :date_of_birth %>
-
-			<%= f.label :gender %>
-			<%= f.select :gender, ['Female', 'Male'] %>
+		<br>
+	
+		<div class="large-4 columns">
+			<fieldset class="dob">
+				<legend class="dob">Date of Birth</legend>
 			
-			<br/>
+				<%= f.label :date_of_birth, "Birthday" %>
+				<%= f.date_select :date_of_birth %>
+
+				<%= f.label :gender %>
+				<%= f.select :gender, ['Female', 'Male'] %>
+			</fieldset>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="large-6 columns">
 			<%= f.button "Create Account" %>
 		</div>
 	</div>
-	
-
 <% end %>

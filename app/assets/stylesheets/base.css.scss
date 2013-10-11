@@ -1,4 +1,66 @@
-// NAVBAR
+$vert: #e7f4ce;
+$mediumvert: #b8de6d;
+$darkvert: #527807;
+
+$lighttomatored: #ffb1a3;
+$tomatored: #ff826b;
+$darktomato: #993b2a;
+
+// FORMS
+// SIGNUP
+
+label {
+  color: black;
+  font-weight: bold;
+}
+
+// Who are you? -------------------
+
+fieldset.signup {
+  background-color: $vert;
+  border: 5px solid $mediumvert;
+  border-radius: 2em 0 0 0;
+  box-shadow: 3px 3px 5px #ccc;
+}
+
+fieldset.signup label {
+
+  padding: 3px;
+  margin-bottom: 10px;
+  width: 20%;
+}
+
+legend.signup {
+  background-color: $mediumvert;
+  box-shadow: 1px 1px 0px $darkvert, 2px 2px 0px $darkvert, 3px 3px 0px $darkvert;
+  padding: 10px;
+}
+
+// Date of Birth -------------------
+
+fieldset.dob {
+  background-color: $lighttomatored;
+  border: 5px solid $tomatored;
+  border-radius: 2em 0 0 0;
+  padding-bottom: 4.2em;
+  box-shadow: 3px 3px 5px #ccc;
+}
+
+fieldset.dob label {
+
+  padding: 3px;
+  margin-bottom: 10px;
+
+}
+
+legend.dob {
+  background-color: $tomatored;
+  box-shadow: 1px 1px 0px $darktomato, 2px 2px 0px $darktomato, 3px 3px 0px $darktomato;
+  padding: 10px;
+}
+
+
+// NAVBAR -------------------
 nav.top-bar.toggle-topbar ul.title-area li.name a.title,
 section.top-bar-section ul.right li a.nav {
   &:hover {
@@ -11,3 +73,8 @@ ul.right ul.dropdown li a:hover {
 }
 
 // LAYOUT
+
+div.container.mainlayout {
+  padding: 20px;
+}
+
