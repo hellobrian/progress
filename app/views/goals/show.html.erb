@@ -1,51 +1,62 @@
+<div class="small-12">
+  <h1 class="subheader goal">
+    <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
+  </h1>
+  <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
+  
 
-<h1 class="subheader"><%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:</h1>
-<h2><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
+<!--     <ol>
+      <%# @micro_goals.each do |m| %>
+        <%# if m.proof == nil %>
+          <li class="microgoal incomplete">
+            <%# m.title.capitalize %> : <%# m.completion_date %>
+          </li>
+        <%# else %>
+          <li class="microgoal complete">
+            <%# m.title.capitalize %> : <%# m.completion_date %>
+          </li>
+        <%# end %>
+      <%# end %>
+    </ol>
+ -->
 
-<div class="small-12 small-centered columns">
-  <% @micro_goals.each do |m| %>
-    <!-- Completed MicroGoal -->
-    <div class="goal-example">
-      <% if m.proof != nil && m.proof.completed == true %>
-        <div class="goal goal-left">
-          <div class="goal-content left">&nbsp;
-          </div>
-        </div>
-        <div class="goal goal-right-blank">
-          <div class="goal-content-blank">&nbsp;
-        </div>
-      </div>
-      <% else  %>
-      <!-- Incomplete MicroGoal -->
-        <div class="goal goal-right">
-          <div class="goal-content incomplete">
-            <p class="subheader"><strong><%= m.title.capitalize %></strong></p>
-            <p class="subheader"><strong>Completion date:</strong> <%= m.completion_date %></p>
-          </div>
-        </div>
-        <div class="goal goal-left-blank">
-          <div class="goal-content-blank">&nbsp;
-        </div>
-      </div>
-      <% end %>
+<% @micro_goals.each do |m| %>
+
+  <% if m.proof == nil %>
+  <div class="microgoal-row">
+    <div class="microgoal right">
+      <div class="microgoal-content right"><%= m.title.capitalize %> : <%= m.completion_date %></div>
+
     </div>
-    <!-- Blank divs to create straight lines between micro goals -->
-    <div class="goal-example">
-      <div class="goal goal-left-blank">
-        <div class="goal-content-blank">&nbsp;
-        </div>
-      </div>
-      <div class="goal goal-right-blank">
-        <div class="goal-content-blank">&nbsp;
-        </div>
-      </div>
-    </div>  
-
+    <div class="microgoal left blank">
+      <div class="microgoal-content blank">&nbsp;</div>
+    </div>
+  </div>
+  <% else %>
+  <div class="microgoal-row">
+    <div class="microgoal left"><%= m.title.capitalize %> : <%= m.completion_date %></div>
+    <div class="microgoal right blank">
+      <div class="microgoal-content blank">&nbsp;</div>
+    </div>
+  </div>
   <% end %>
+  <div class="microgoal-row">
+    <div class="microgoal left blank">
+      <div class="microgoal-content blank">&nbsp;</div>
+    </div>
+    <div class="microgoal right blank">
+      <div class="microgoal-content blank">&nbsp;</div>
+    </div>
+  </div>
+<% end %>
+
+
+  <br>
+  <div class="row">
+    <div class="small-4 small-centered">
+      <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id), class: "goal" %> |
+      <%= link_to "Back to Goals", goals_path, class: "goal" %> 
+    </div>
+  </div>
+  
 </div>
-<div class="small-3 small-centered columns">
-  <h3 class="subheader small-block-grid-1"><%= @goal.user.first_name %> <%= @goal.user.last_name %> will:</h3>
-  <h4 class="small-block-grid-1"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h4>
-</div>
-<%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %> |
-<%= link_to "Back to Goals",  goals_path %> 

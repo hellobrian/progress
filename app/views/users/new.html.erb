@@ -39,7 +39,7 @@
 				<legend class="dob">Date of Birth</legend>
 			
 				<%= f.label :date_of_birth, "Birthday" %>
-				<%= f.date_select(:date_of_birth, start_year: 1950, end_year: (Time.now).year) %>
+				<%= f.date_select :date_of_birth, start_year: 1950, end_year: (Time.now).year %>
 
 				<%= f.label :gender %>
 				<%= f.select :gender, ['Female', 'Male'] %>

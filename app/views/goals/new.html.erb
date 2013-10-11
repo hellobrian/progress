@@ -1,47 +1,52 @@
-<div class="goal-form-container">
-<h1>I want to (verb) (title) <- jQuery keyup event</h1>
+
+<!-- <h1>I want to (verb) (title) <- jQuery keyup event</h1> -->
+
 
 <%= form_for @goal, :html => { :class => "custom"} do |f| %>
-  
-  <fieldset class="all-verbs">
-    <legend><h3>I want to</h3></legend>
+  <div class="row">
+    <div class="large-10 columns">
+      <fieldset class="all-verbs">
+        <legend><h3>I want to</h3></legend>
+        <div class="row">
+          <div class="large-12 columns">
+            <% Goal::VERBS.each_with_index do |v,i| %>
 
-      <% Goal::VERBS.each_with_index do |v,i| %>
-        <% if i == 0 %>
-        
-          <%= f.label v %>
-          <%= f.radio_button :verb, v, checked: true, 
-          class: "radio_button" %>
-        
-        <% else %>
-        
-          <%= f.label v -%>
-          <%= f.radio_button :verb, v, class: "radio_button" %>
-        
-        <% end %>
-      <% end %>
+              <% if i % 2 == 0 %>  
+                <%= f.label v, class: "verb" %>
+                <%= f.radio_button :verb, v, class: "radio_button" %>
 
-    <div class="row">
-      <div class="large-12 columns">
-         <%= f.text_field :title, size: 140, placeholder: "eg. French", 
-         class: "text_field" %>
-      </div>
+              <% else %>
+                <%= f.label v %>
+                <%= f.radio_button :verb, v, class: "radio_button" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="large-10 columns">
+             <%= f.text_field :title, size: 140, placeholder: "eg. French", 
+             class: "text_field" %>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><h3>Why?</h3></legend>
+        <%= f.text_area :motivation, rows: 7, cols: 100 %>
+      </fieldset>
+
+      <fieldset>
+        <legend><h3>When will you achieve this goal?</h3></legend>
+        <%= f.date_select :completion_date %>
+      </fieldset>
+
+      <%= f.button %>
     </div>
-   
-  </fieldset>
+  </div>
 
-  <fieldset>
-    <legend><h3>Why?</h3></legend>
-    <%= f.text_area :motivation, rows: 7, cols: 100 %>
-  </fieldset>
-
-  <fieldset>
-    <legend><h3>When will you achieve this goal?</h3></legend>
-    <%= f.date_select :completion_date %>
-  </fieldset>
-
-  <%= f.button %>
+  
 
 <% end %>
-</div>
+
 
