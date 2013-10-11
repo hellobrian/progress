@@ -8,26 +8,34 @@
     <div class="goal-example">
       <% if m.proof != nil && m.proof.completed == true %>
         <div class="goal goal-left">
-          <div class="goal-content">&nbsp;
+          <div class="goal-content left">&nbsp;
           </div>
         </div>
+        <div class="goal goal-right-blank">
+          <div class="goal-content-blank">&nbsp;
+        </div>
+      </div>
       <% else  %>
       <!-- Incomplete MicroGoal -->
         <div class="goal goal-right">
-          <div class="goal-content">
-            <h6 class="subheader"><strong>Must do:</strong> <%= m.title %></h6>
-            <h6 class="subheader"><strong>Completion date:</strong> <%= m.completion_date %></h6>
+          <div class="goal-content incomplete">
+            <p class="subheader"><strong><%= m.title.capitalize %></strong></p>
+            <p class="subheader"><strong>Completion date:</strong> <%= m.completion_date %></p>
           </div>
         </div>
+        <div class="goal goal-left-blank">
+          <div class="goal-content-blank">&nbsp;
+        </div>
+      </div>
       <% end %>
     </div>
     <!-- Blank divs to create straight lines between micro goals -->
     <div class="goal-example">
-      <div class="goal goal-left">
+      <div class="goal goal-left-blank">
         <div class="goal-content-blank">&nbsp;
         </div>
       </div>
-      <div class="goal goal-right">
+      <div class="goal goal-right-blank">
         <div class="goal-content-blank">&nbsp;
         </div>
       </div>

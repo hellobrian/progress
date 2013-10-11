@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // $blockquote-border: 1px solid #ddd;
-
+$linecolor: #808080;
+$incomplete: #7C0B04;
 
 // MicroGoal items
 
@@ -13,32 +14,53 @@
 // Mina's styles -----------
 
 .goal-example {
-overflow: auto;
+  overflow: auto;
 }
 
 .goal.goal-left {
-float: left;
-border-right: 2px solid black;
-width: 50%;
+  float: left;
+  border-right: 3px solid $linecolor;
+  width: 50%;
+}
+
+.goal.goal-left-blank {
+  float: left;
+  border-right: 3px solid $linecolor;
+  width: 50%;
 }
 
 .goal-content {
-width: 80%;
-margin: 8px 10%;
-background: aliceblue;
-height: 50px;
+  width: 50%;
+  margin: 8px 10%;
+  height: 3.125em;
+  &.incomplete {
+    background-color: $incomplete;
+    color: #FFF;
+    p {
+      text-align: left;
+      line-height: 1.0;
+      padding-left: 5px;
+      font-size: 1em;
+    }
+  }
 }
 
 .goal-content-blank {
-width: 80%;
-margin: 8px 10%;
-height: 50px;
+  width: 80%;
+  margin: 8px 10%;
+  height: 50px;
 }
 
 .goal.goal-right {
-float: right;
-border-left: 2px solid black;
-width: 50%;
+  float: right;
+  border-left: 3px solid $linecolor;
+  width: 50%;
+}
+
+.goal.goal-right-blank {
+  float: right;
+  border-left: 3px solid $linecolor;
+  width: 50%;
 }
 
 
