@@ -16,6 +16,7 @@
     <div class="microgoal-content">
       <%= m.title.capitalize %>
       Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
+      <%= link_to 'Add Proof', new_micro_goal_proof_path(m) %>
     </div>
   </div>
   <!-- Creating a vertical line -->

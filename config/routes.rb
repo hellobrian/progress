@@ -1,5 +1,9 @@
 Progress::Application.routes.draw do
 
+  get "proofs/new"
+
+  get "proofs/create"
+
   root :to => 'welcome#index'
 
   resources :sessions, except: :index
@@ -13,6 +17,11 @@ Progress::Application.routes.draw do
   resources :goals do
     resources :micro_goals
   end
+
+  resources :micro_goals do
+    resources :proofs
+  end
+
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
