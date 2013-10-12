@@ -10,14 +10,17 @@
         <div class="row">
           <div class="large-12 columns">
             <% Goal::VERBS.each_with_index do |v,i| %>
-
-              <% if i % 2 == 0 %>  
-                <%= f.label v, class: "verb" %>
-                <%= f.radio_button :verb, v, class: "radio_button" %>
-
-              <% else %>
+              <% if i == 0 %>
+              
                 <%= f.label v %>
+                <%= f.radio_button :verb, v, checked: true, 
+                class: "radio_button" %>
+              
+              <% else %>
+              
+                <%= f.label v -%>
                 <%= f.radio_button :verb, v, class: "radio_button" %>
+              
               <% end %>
             <% end %>
           </div>

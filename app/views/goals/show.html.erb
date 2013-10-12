@@ -3,54 +3,32 @@
     <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
   </h1>
   <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
-  
-
-<!--     <ol>
-      <%# @micro_goals.each do |m| %>
-        <%# if m.proof == nil %>
-          <li class="microgoal incomplete">
-            <%# m.title.capitalize %> : <%# m.completion_date %>
-          </li>
-        <%# else %>
-          <li class="microgoal complete">
-            <%# m.title.capitalize %> : <%# m.completion_date %>
-          </li>
-        <%# end %>
-      <%# end %>
-    </ol>
- -->
 
 <% @micro_goals.each do |m| %>
-
   <% if m.proof == nil %>
   <div class="microgoal-row">
     <div class="microgoal right">
-      <div class="microgoal-content right"><%= m.title.capitalize %> : <%= m.completion_date %></div>
-
+      <div class="microgoal-content">
+        <%= m.title.capitalize %> : <%= m.completion_date %>
+      </div>
     </div>
     <div class="microgoal left blank">
-      <div class="microgoal-content blank">&nbsp;</div>
+      <div class="microgoal-content">&nbsp;</div>
     </div>
   </div>
   <% else %>
   <div class="microgoal-row">
-    <div class="microgoal left"><%= m.title.capitalize %> : <%= m.completion_date %></div>
+    <div class="microgoal left">
+      <div class="microgoal-content">
+        <%= m.title.capitalize %> : <%= m.completion_date %>
+      </div>
+    </div>
     <div class="microgoal right blank">
-      <div class="microgoal-content blank">&nbsp;</div>
+      <div class="microgoal-content">&nbsp;</div>
     </div>
   </div>
   <% end %>
-  <div class="microgoal-row">
-    <div class="microgoal left blank">
-      <div class="microgoal-content blank">&nbsp;</div>
-    </div>
-    <div class="microgoal right blank">
-      <div class="microgoal-content blank">&nbsp;</div>
-    </div>
-  </div>
 <% end %>
-
-
   <br>
   <div class="row">
     <div class="small-4 small-centered">
@@ -58,5 +36,24 @@
       <%= link_to "Back to Goals", goals_path, class: "goal" %> 
     </div>
   </div>
-  
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
