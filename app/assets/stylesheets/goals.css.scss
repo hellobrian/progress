@@ -10,27 +10,16 @@ h2.goal {
 
 .small-6 {
   &.left {
-    border-right: 0.063em solid black;
+    border-right: 0.125em solid black;
     padding-right: 0.313em;
-    &.blank {
-      background-color: transparent;
-      visibility: hidden;
-      // border-right: 2px solid black;
-    }
   }
   &.right {
-    border-left: 0.063em solid black;
-    background-color: white;
+    border-left: 0.125em solid black;
     padding-left: 0.313em;
-    &.blank {
-      background-color: transparent;
-      visibility: hidden;
-    }
   }
 }
 
 .microgoal-content {
-  // margin-bottom: 24px;
   background-color: tomato;
   text-align: center;
   padding: 1em;
@@ -39,6 +28,7 @@ h2.goal {
 .blank > .microgoal-content {
   background-color: transparent;
   padding: 1em;
+  visibility: hidden;
 }
 
 
