@@ -5,15 +5,16 @@
   <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
 
 <% @micro_goals.each do |m| %>
-  <% if m.proof == nil %>
-  <div class="microgoal-row">
-    <div class="microgoal right">
+<!-- if micro_goal has no proof -->
+  <% if m.proof == nil %> 
+  <div class="microgoal-row"> 
+    <div class="microgoal left blank">
+      <div class="microgoal-content">&nbsp;</div>
+    </div>
+    <div class="microgoal right"> 
       <div class="microgoal-content">
         <%= m.title.capitalize %> : <%= m.completion_date %>
       </div>
-    </div>
-    <div class="microgoal left blank">
-      <div class="microgoal-content">&nbsp;</div>
     </div>
   </div>
   <% else %>
