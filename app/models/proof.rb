@@ -15,6 +15,15 @@ class Proof < ActiveRecord::Base
   attr_accessible :completed, :lesson, :micro_goal_id, :picture
   belongs_to :micro_goal
 
+
   validates :lesson, presence: true
   validates :lesson, length: { maximum: 140 }
+
+  after_validation :valid_proof
+
+private
+
+  def valid_proof
+    self.completed = true
+  end
 end
