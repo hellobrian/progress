@@ -5,6 +5,7 @@ gem 'rails', '3.2.14'
 gem 'pg' # replacing sqlite3 with PostgreSQL
 gem 'sorcery'
 gem 'carrierwave'
+gem 'rmagick'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
