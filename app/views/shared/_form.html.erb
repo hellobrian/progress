@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="large-6 columns signup">
+    <div class="large-8 columns signup">
       <fieldset class="signup">
         <legend class="signup">Who are you?</legend>      
         <%= f.label :first_name %>
@@ -34,33 +34,37 @@
 
         <%= f.label :password %>
         <%= f.password_field :password %>
+        <fieldset class="dob">
+          <legend class="dob">Date of Birth</legend>
+
+          <%= f.label :date_of_birth, "Birthday" %>
+          <%= f.date_select :date_of_birth, start_year: 1950, end_year: (Time.now).year %>
+
+          <%= f.label :gender %>
+          <%= f.select :gender, ['Female', 'Male'] %>
+        </fieldset>
+        <fieldset>
+          <legend>What do you look like?</legend>
+          <% if current_page?(action: 'edit') %>
+            <fieldset>
+              <legend><p>Current Profile</p></legend>
+              <%= image_tag @user.image.url(:profile).to_s %>
+            </fieldset>  
+          <% end %>
+          <%= f.file_field :image %>
+          <%= f.label :remote_image_url, "Or image url" %>
+          <%= f.text_field :remote_image_url %>
+
+
+        </fieldset>
       </fieldset>
     </div>
 
     <br>
   
-    <div class="large-4 columns">
-      <fieldset class="dob">
-        <legend class="dob">Date of Birth</legend>
-      
-        <%= f.label :date_of_birth, "Birthday" %>
-        <%= f.date_select :date_of_birth, start_year: 1950, end_year: (Time.now).year %>
-
-        <%= f.label :gender %>
-        <%= f.select :gender, ['Female', 'Male'] %>
-      </fieldset>
-    </div>
   </div>
   <br>
-  <div class="row">
-    <div class="large-6 columns">
-      <fieldset>
-        <legend>What do you look like?</legend>
-
-        <%= f.file_field :image %>
-      </fieldset>
-      </div>
-  </div>
+  
   <div class="row">
     <div class="large-6 columns">
       <%= f.button "Create Account" %>

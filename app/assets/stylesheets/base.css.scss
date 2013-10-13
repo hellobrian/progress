@@ -20,7 +20,6 @@ label {
 fieldset.signup {
   background-color: $vert;
   border: 5px solid $mediumvert;
-  border-radius: 2em 0 0 0;
   box-shadow: 3px 3px 5px #ccc;
 }
 
@@ -42,8 +41,6 @@ legend.signup {
 fieldset.dob {
   background-color: $lighttomatored;
   border: 5px solid $tomatored;
-  border-radius: 2em 0 0 0;
-  padding-bottom: 4.2em;
   box-shadow: 3px 3px 5px #ccc;
 }
 

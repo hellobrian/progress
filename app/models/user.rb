@@ -18,7 +18,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   attr_accessible :first_name, :last_name, :email, :date_of_birth, :gender, 
-                  :password, :image
+                  :password, :image, :remote_image_url
 
   validates :first_name, :last_name, :date_of_birth, :gender, :email, presence: true
   validates :email, uniqueness: true
