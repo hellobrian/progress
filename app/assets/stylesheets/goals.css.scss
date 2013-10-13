@@ -63,6 +63,15 @@ h2.goal {
   min-width: 18em;
 }
 
+.simple_overlay {
+  z-index: 10000;
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  // display: none;
+}
+
 
 
 
