@@ -12,12 +12,11 @@
   <div class="row"> 
 
     <div class="large-12 columns">
-      <% if current_page?(action: 'new') == true %>
+      <% if current_page?(controller: 'users', action: 'new') == true %>
         <h1>Sign Up</h1>
       <% else %>
         <h1>Edit Profile</h1>
       <% end %>
-
     </div>
 
     <div class="large-8 columns signup">
@@ -45,7 +44,7 @@
         </fieldset>
         <fieldset>
           <legend>What do you look like?</legend>
-          <% if current_page?(action: 'edit') %>
+          <% if current_page?('/users/new') == false %>
             <fieldset>
               <legend><p>Current Profile</p></legend>
               <%= image_tag @user.image.url(:profile).to_s %>

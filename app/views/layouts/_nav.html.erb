@@ -43,18 +43,16 @@
         
           
           <li class="divider"></li>
-          <li><%= link_to 'Logout', logout_path, class: "radius button" %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
         <% else %>
           <li class="divider"></li>
-          <li><%= link_to 'Sign up', new_user_path, 
-            class: "medium secondary radius button" %></li>
-          
-          <li><%= link_to 'Log in', login_path, class: "radius button" %></li>
+          <li><%= link_to 'Sign up', new_user_path, class: 'signup' %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Log in', login_path, class: 'login' %></li>
         <% end %>
 
         <li class="divider"></li>
-        <li><%= link_to 'Add New Goal', new_goal_path, 
-          class: "success radius button" %></li>
+        <li><%= link_to 'Add New Goal', new_goal_path, class: "new-goal" %></li>
       </ul>
       
     </section>
