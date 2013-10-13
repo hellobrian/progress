@@ -4,47 +4,53 @@
 </h1>
 <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
 
-<% @micro_goals.each do |m| %>
-<div class="row display">
-<!-- if micro_goal has no proof -->
-<% if m.proof == nil %>  
-  <div class="small-6 columns left blank">
-    <div class="microgoal-content"><%= m.title.capitalize %>
-      Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
-      <h6 class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></h6>
+<div class="small-5 large-centered columns">
+  <% @micro_goals.each do |m| %>
+    <div class="row display path-width">
+    <!-- if micro_goal has no proof -->
+      <% if m.proof == nil %>  
+        <div class="small-6 columns left blank">
+          <div class="microgoal-content"><%= m.title.capitalize %>
+            Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
+            <p class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></p>
+          </div>
+        </div>
+        <div class="small-6 columns right"> 
+          <div class="microgoal-content incomplete">
+            <%= m.title.capitalize %>
+            Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
+            <p class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></p>
+          </div>
+        </div>
+        <!-- Creating a vertical line -->
+        <% 3.times do %>
+          <div class="small-6 columns left">&nbsp;</div>
+          <div class="small-6 columns right">&nbsp;</div>
+        <% end %>
+      <% else %>
+      <!-- if micro_goal has proof -->
+        <div class="small-6 columns right blank">
+          <div class="microgoal-content"><%= m.title.capitalize %>
+          </div>
+        </div>
+        <div class="small-6 columns left"> 
+          <div class="microgoal-content complete">
+            <%= m.title.capitalize %>
+          </div>
+        </div>
+        <!-- Creating a vertical line -->
+        <% 3.times do %>
+          <div class="small-6 columns left">&nbsp;</div>
+          <div class="small-6 columns right">&nbsp;</div>
+        <% end %>
+      <% end %>
     </div>
-  </div>
-  <div class="small-6 columns right"> 
-    <div class="microgoal-content incomplete">
-      <%= m.title.capitalize %>
-      Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
-      <h6 class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></h6>
-    </div>
-  </div>
-  <!-- Creating a vertical line -->
-  <% 2.times do %>
-    <div class="small-6 columns left">&nbsp;</div>
-    <div class="small-6 columns right">&nbsp;</div>
   <% end %>
-<% else %>
-<!-- if micro_goal has proof -->
-  <div class="small-6 columns right blank">
-    <div class="microgoal-content"><%= m.title.capitalize %>
-    </div>
-  </div>
-  <div class="small-6 columns left"> 
-    <div class="microgoal-content complete">
-      <%= m.title.capitalize %>
-    </div>
-  </div>
-  <!-- Creating a vertical line -->
-  <% 2.times do %>
-    <div class="small-6 columns left">&nbsp;</div>
-    <div class="small-6 columns right">&nbsp;</div>
-  <% end %>
-<% end %>
+
+  <h1 class="subheader goal panel radius">
+    <strong><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></strong>
+  </h1>
 </div>
-<% end %>
 <br>
 <div class="row">
   <div class="small-4 small-centered">
