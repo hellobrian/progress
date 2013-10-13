@@ -69,5 +69,6 @@ module Progress
     # config.generators do |g|
     #   g.test_framework :rspec, :fixture => false
     # end
+    # config.assets.paths << Rails.root.join("#{Rails.root}/app/assets/fonts")
   end
 end

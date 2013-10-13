@@ -6,6 +6,7 @@ $lighttomatored: #ffb1a3;
 $tomatored: #ff826b;
 $darktomato: #993b2a;
 
+
 //// FORMS
 
 // Who are you? -------------------
@@ -69,9 +70,6 @@ label.verb {
   float: left;
 }
 
-
-
-
 // NAVBAR -------------------
 nav.top-bar.toggle-topbar ul.title-area li.name a.title,
 section.top-bar-section ul.right li a.nav {
@@ -112,6 +110,18 @@ nav section.top-bar-section ul.right li a.signup {
   transition: 0.2s;
   &:hover {
     background-color: #e88821;
+    transition: 0.2s;
+    opacity: 1;
+  }
+}
+
+// Log out
+nav section.top-bar-section ul.right li a.logout {
+  background-color: #b20000;
+  opacity: 0.7;
+  transition: 0.2s;
+  &:hover {
+    background-color: #cc0000;
     transition: 0.2s;
     opacity: 1;
   }
