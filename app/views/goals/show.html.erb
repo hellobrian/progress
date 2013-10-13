@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="small-6 columns right"> 
-    <div class="microgoal-content">
+    <div class="microgoal-content incomplete">
       <%= m.title.capitalize %>
       Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
       <h6 class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></h6>
@@ -28,14 +28,20 @@
   <% end %>
 <% else %>
 <!-- if micro_goal has proof -->
-  <div class="microgoal left">
-    <div class="microgoal-content">
-      <%= m.title.capitalize %> : <%= m.completion_date %>
+  <div class="small-6 columns right blank">
+    <div class="microgoal-content"><%= m.title.capitalize %>
     </div>
   </div>
-  <div class="microgoal right blank">
-    <div class="microgoal-content">&nbsp;</div>
+  <div class="small-6 columns left"> 
+    <div class="microgoal-content complete">
+      <%= m.title.capitalize %>
+    </div>
   </div>
+  <!-- Creating a vertical line -->
+  <% 2.times do %>
+    <div class="small-6 columns left">&nbsp;</div>
+    <div class="small-6 columns right">&nbsp;</div>
+  <% end %>
 <% end %>
 </div>
 <% end %>
