@@ -28,8 +28,8 @@
 
         <% if current_user %>
           <li class="divider"></li>
-          <li><%= link_to "#{current_user.first_name}'s Goals", 
-            user_goals_path(current_user.id), class: "nav" %></li>
+          <li><%= link_to "#{current_user.first_name.capitalize}'s Profile", 
+            user_path(current_user.id), class: "nav" %></li>
           <li class="divider"></li>
           <li><%= link_to 'Logout', logout_path, class: "radius button" %></li>
         <% else %>

@@ -1,4 +1,9 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-<%= @user.image %>
+<% if @user.image == nil %>
+  <%= image_tag('rails.png') %>
+<% else %>
+  <%= image_tag @user.image.url(:profile).to_s %>
+<% end %>
+
+<%= link_to "Edit Profile", edit_user_path(@user) %>
