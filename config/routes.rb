@@ -1,9 +1,5 @@
 Progress::Application.routes.draw do
 
-  get "proofs/new"
-
-  get "proofs/create"
-
   root :to => 'welcome#index'
 
   resources :sessions, except: :index
