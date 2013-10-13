@@ -2,7 +2,6 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-
-$('span.custom.radio').on("click", function(){
-  $(this).hasClass('checked') { alert("checked!"); }
-})
+$('.proof').click(function(){
+  $(this).closest('.simple_overlay').fadeToggle();
+});
