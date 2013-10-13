@@ -67,8 +67,11 @@ h2.goal {
   z-index: 10000;
   border: 1px solid black;
   background-color: white;
+  box-shadow: 10px 10px 5px #ccc;
+  border-radius: 3px;
   position: absolute;
-  width: 100%;
+  max-width: 16.75em;
+  font-size: 1em;
   // display: none;
 }
 
