@@ -12,6 +12,7 @@
 #  salt             :string(255)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  image            :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -23,4 +24,6 @@ class User < ActiveRecord::Base
 
   has_many :goals, dependent: :destroy
   has_many :micro_goals, through: :goals
+
+  mount_uploader :image, ImageUploader
 end
