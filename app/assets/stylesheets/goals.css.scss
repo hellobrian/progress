@@ -1,6 +1,7 @@
 $linecolor: #808080;
 $incomplete: #7C0B04;
 
+
 // MicroGoal items
 
 h1.goal, 
@@ -20,8 +21,11 @@ h2.goal {
 }
 
 .microgoal-content {
-  background-color: tomato;
   text-align: center;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.4;
   padding: 1em;
 }
 
@@ -31,8 +35,33 @@ h2.goal {
   visibility: hidden;
 }
 
+.done {
+  padding-top: 1em;
+  padding-right: 1em;
+  text-align: right;
+  a {
+    color: #006700;
+    border-radius: 3px;
+    background-color: #c0c0c0;
+    padding: 5px;
+  }
+  :hover {
+    background-color: #a7a7a7;
+  }
+}
 
+.complete {
+  background-color: #006700;
 
+}
+
+.incomplete {
+  background-color: #cc0000;
+}
+
+.path-width{
+  min-width: 18em;
+}
 
 
 
