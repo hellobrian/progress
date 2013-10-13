@@ -1,4 +1,4 @@
-<%= form_for @user, :html => { :class => "custom" } do |f| %>			
+<%= form_for @user, :html => { :class => "custom", multipart: true } do |f| %>			
 	<% unless f.object.errors.empty? %>
 		<div class="alert alert-error">
 			<strong>Try again after fixing the following things:</strong><br/>
