@@ -1,0 +1,28 @@
+<%= simple_form_for @user, :html => { class: 'custom', multipart: true } do |f| %>      
+        
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, autofocus: true %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email, class: "email" %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+
+  <%= f.label :date_of_birth, "Birthday" %>
+  <%= f.date_select :date_of_birth, start_year: 1950, end_year: (Time.now).year %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, ['Female', 'Male'] %>
+
+  <%= f.file_field :image %>
+  <%= f.label :remote_image_url, "Or image url" %>
+  <%= f.text_field :remote_image_url %>
+
+  <%= f.submit %>
+   
+<% end %>
