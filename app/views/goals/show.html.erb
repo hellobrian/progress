@@ -2,65 +2,61 @@
 <h1 class="subheader goal">
   <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
 </h1>
+<div>
 <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
-
-<div class="small-5 large-centered columns">
+<div class="small-2 large-centered columns">
   <% @micro_goals.each do |m| %>
-    <div class="row display path-width">
-    <!-- if micro_goal has no proof -->
-      <% if m.proof == nil %>  
-        <div class="small-6 columns left blank">
-          <div class="microgoal-content"><%= m.title.capitalize %>
-            Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
-            <p class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></p>
-          </div>
-        </div>
-        <div class="small-6 columns right"> 
-          <div class="microgoal-content incomplete">
+    <div class="row">
+      <!-- if there is no proof -->
+      <% if m.proof == nil %>
+        <ul class="small-12 large-centered columns no-proof path-width">
+          <li>
             <%= m.title.capitalize %>
-            Due date : <em><%= m.completion_date.strftime("%A, %b %e %Y") %></em>
-            <p class="row done"><%= link_to 'Done!', new_micro_goal_proof_path(m) %></p>
-          </div>
-        </div>
-        <!-- Creating a vertical line -->
-        <% 3.times do %>
-          <div class="small-6 columns left">&nbsp;</div>
-          <div class="small-6 columns right">&nbsp;</div>
-        <% end %>
+            <%= m.completion_date.strftime("%A, %b %e %Y") %>
+          </li>
+          <li>
+            <div class="row done">
+              <%= link_to 'Done!' %>
+            </div>
+          </li>
+        </ul>
+      <!-- if there is proof -->
       <% else %>
-      <!-- if micro_goal has proof -->
-        <div class="small-6 columns right blank">
-          <div class="microgoal-content"><%= m.title.capitalize %>
-          </div>
-        </div>
-        <div class="simple_overlay small-offset-6 small-6 columns">
-          <h6 class="subheader"><%= m.proof.lesson %></h6>
-        </div>
-        <div class="small-6 columns left"> 
-          <div class="microgoal-content complete proof">
+        <ul class="small-12 large-centered columns proof path-width">
+          <li>
             <%= m.title.capitalize %>
-          </div>
-        </div>
-        <!-- Creating a vertical line -->
-        <% 3.times do %>
-          <div class="small-6 columns left">&nbsp;</div>
-          <div class="small-6 columns right">&nbsp;</div>
-        <% end %>
+          </li>
+        </ul>
       <% end %>
     </div>
+    <!-- Creating the connecting line -->
+    <% 3.times do %>
+      <div class="row">
+        <!-- <div class="small-12 large-centered columns"> -->
+          <div class="small-1 large-centered columns">
+            <ul class="small-block-grid-1">
+              <li class="line"></li>
+            </ul>
+          </div>
+        <!-- </div> -->
+      </div>
+    <% end %>  
   <% end %>
-
-  <h1 class="subheader goal panel radius">
-    <strong><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></strong>
-  </h1>
 </div>
-<br>
-<div class="row">
-  <div class="small-4 small-centered">
-    <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id), class: "goal" %> |
-    <%= link_to "Back to Goals", goals_path, class: "goal" %> 
+<div class="small-4 large-centered columns">
+  <div class="panel radius">
+      <h2 class="subheader center">
+        <%= @goal.verb.capitalize %> <%= @goal.title.downcase %>
+      </h2>
   </div>
+</div> 
+<br>
+<!-- <div class="small-4 small-centered"> -->
+  <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id), class: "goal" %> |
+  <%= link_to "Back to Goals", goals_path, class: "goal" %> 
 </div>
+<!-- </div> -->
+
 
 
 
