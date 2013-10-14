@@ -1,29 +1,43 @@
 <%= simple_form_for @user, :html => { class: 'custom', multipart: true } do |f| %>      
-        
-  <fieldset>
-    <%= f.input :first_name %>
-    <br>
-    <%= f.input :last_name %>
-    <br>
-    <%= f.input :email, placeholder: 'user@example.com' %>
-    <br>
-    <%= f.input :password %>
-    <br>
-    <%= f.label :gender %>
-    <%= f.select :gender, ['Female', 'Male'] %>
+  <div class="row">
+    <div class="large-8">
+      <fieldset>
+        <%= f.input :first_name %>
+        <br>
+        <%= f.input :last_name %>
+        <br>
+        <%= f.input :email, placeholder: 'user@example.com' %>
+        <br>
+        <%= f.input :password %>
+        <br>
+        <div class="large-3">
+          <%= f.input :gender, collection: [:male, :female] %>
+        </div>
+      </fieldset>
+    </div>
+  </div>
 
-  </fieldset>
-  <fieldset>
-    <%= f.input :date_of_birth, label: 'Date of Birth', start_year: 1950, end_year: (Time.now).year %>
-  </fieldset>
-  <fieldset>
-    <%= f.input :image, label: "Profile Pic" %>
-    <br>
-    <h6>or</h6>
-    <br>
-    <%= f.input :remote_image_url, label: "link to image url" %>
-  </fieldset>
-
-  <%= f.button :submit %>
-
+  <div class="row">
+    <div class="large-8">
+      <fieldset>
+        <div class="large-8">
+          <%= f.input :date_of_birth, label: 'Date of Birth', start_year: 1950, end_year: (Time.now).year %>  
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-8">
+      <fieldset>
+        <%= f.input :image, label: "Profile Pic" %>
+        <br>
+        <h6>or</h6>
+        <br>
+        <%= f.input :remote_image_url, label: "link to image url" %>
+        <br>
+        <%= f.button :submit %>
+      </fieldset>
+    </div>
+  </div>   
 <% end %>
