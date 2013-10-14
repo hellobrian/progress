@@ -17,7 +17,7 @@ li.line {
   background-color: black;
 }
 
-ul.small-12 {
+ul.large-centered {
   margin-bottom: 0;
   text-align: center;
   &.no-proof {
@@ -82,17 +82,18 @@ ul.small-12 {
   min-width: 10em;
 }
 
-// .simple_overlay {
-//   z-index: 10000;
-//   border: 1px solid black;
-//   background-color: white;
-//   box-shadow: 10px 10px 5px #ccc;
-//   border-radius: 3px;
-//   position: absolute;
-//   max-width: 16.75em;
-//   font-size: 1em;
-//   // display: none;
-// }
+.simple_overlay {
+  z-index: 10000;
+  border: 1px solid black;
+  background-color: white;
+  // box-shadow: 0px 5px 5px #ccc;
+  border-radius: 3px;
+  position: relative;
+  max-width: 16.75em;
+  font-size: 1em;
+  text-align: center;
+  display: none;
+}
 
 .panel {
   margin-top: 5px;

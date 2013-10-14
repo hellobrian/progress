@@ -3,12 +3,12 @@
   <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
 </h1>
 <h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
-<div class="small-2 large-centered columns">
+<div class="small-12 large-centered columns">
   <% @micro_goals.each do |m| %>
     <div class="row">
       <!-- if there is no proof -->
       <% if m.proof == nil %>
-        <ul class="small-12 large-centered columns no-proof path-width">
+        <ul class="small-3 large-centered columns no-proof path-width">
           <li>
             <%= m.title.capitalize %>
             <%= m.completion_date.strftime("%A, %b %e %Y") %>
@@ -21,24 +21,27 @@
         </ul>
       <!-- if there is proof -->
       <% else %>
-        <ul class="small-12 large-centered columns proof path-width">
+        <ul class="small-3 large-centered columns proof path-width">
           <li>
             <%= m.title.capitalize %>
           </li>
+          <li class="simple_overlay"><%= m.proof.lesson %></li>
         </ul>
-        <h6>Test Item</h6>
+        <!-- <div class="small-6 columns simple_overlay">
+          <h3><%= m.proof.lesson %></h3>
+        </div> -->
       <% end %>
     </div>
     <!-- Creating the connecting line -->
     <% 3.times do %>
       <div class="row">
-        <!-- <div class="small-12 large-centered columns"> -->
+        <div class="small-1 large-centered columns">
           <div class="small-1 large-centered columns">
             <ul class="small-block-grid-1">
               <li class="line"></li>
             </ul>
           </div>
-        <!-- </div> -->
+        </div>
       </div>
     <% end %>  
   <% end %>
