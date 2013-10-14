@@ -7,16 +7,20 @@ gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'simple_form'
-gem 'ui_datepicker-rails3'
+gem 'jquery-rails'
+
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
+  gem 'jquery-ui-rails'
+  gem 'ui_datepicker-rails3'
 end
 
-gem 'jquery-rails'
+
 
 group :tools do 
 	gem 'guard-rspec'

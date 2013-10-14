@@ -25,3 +25,4 @@ SimpleForm.setup do |config|
   config.default_wrapper = :foundation
 end
 
+UiDatePickerRails3.activate :simple_form
