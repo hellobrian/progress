@@ -4,15 +4,7 @@
 
 .ui-datepicker-prev, 
 .ui-datepicker-next {
-  background-color: black;
-  color: white;
-  padding: 3px;
-  margin-right: 5px;
-  border-radius: 3px;
-  &:hover {
-    color: black;
-    background-color: orange;
-  }
+  display: none;
 }
 
 select.ui-datepicker-month {

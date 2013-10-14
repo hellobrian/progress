@@ -5,8 +5,10 @@
 $('input.ui-date-picker').datepicker();
 
 var datepicker_widgets = $('input.ui-date-picker');
+
 datepicker_widgets.datepicker( 'option', 'changeMonth', true );
 datepicker_widgets.datepicker( 'option', 'changeYear', true );
+datepicker_widgets.datepicker( 'option', 'yearRange', "-50:+0" );
 
 
-  
+
