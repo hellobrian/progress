@@ -9,70 +9,109 @@ h2.goal {
   text-align: center;
 }
 
-.small-6 {
-  &.left {
-    border-right: 0.125em solid black;
-    padding-right: 0.313em;
-  }
-  &.right {
-    border-left: 0.125em solid black;
-    padding-left: 0.313em;
-  }
+li {
+  list-style-type: none;
 }
 
-.microgoal-content {
+li.line {
+  background-color: black;
+}
+
+ul.large-centered {
+  margin-bottom: 0;
   text-align: center;
-  color: white;
-  font-size: 1em;
-  font-weight: 500;
-  line-height: 1.4;
-  padding: 1em;
+  padding-bottom: 0.625em;
+  border-radius: 3px;
+  &.no-proof {
+    background-color: #ff6666;
+  }
+  &.proof {
+    background-color: #006700;
+  }
 }
 
-.blank > .microgoal-content {
-  background-color: transparent;
-  padding: 1em;
-  visibility: hidden;
-}
+// .small-6 {
+//   &.left {
+//     border-right: 0.125em solid black;
+//     padding-right: 0.313em;
+//   }
+//   &.right {
+//     border-left: 0.125em solid black;
+//     padding-left: 0.313em;
+//   }
+// }
+
+// .microgoal-content {
+//   text-align: center;
+//   color: white;
+//   font-size: 1em;
+//   font-weight: 500;
+//   line-height: 1.4;
+//   padding: 1em;
+// }
+
+// .blank > .microgoal-content {
+//   background-color: transparent;
+//   padding: 1em;
+//   visibility: hidden;
+// }
 
 .done {
-  padding-top: 1em;
-  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-right: 0.5em;
   text-align: right;
   a {
-    color: #006700;
+    color: #7f0000;
     border-radius: 3px;
-    background-color: #c0c0c0;
-    padding: 5px;
+    // background-color: #ff0000;
+    // padding: 5px;
   }
   :hover {
-    background-color: #a7a7a7;
+    color: black;
   }
 }
 
-.complete {
-  background-color: #006700;
+// .complete {
+//   background-color: #006700;
 
-}
+// }
 
-.incomplete {
-  background-color: #cc0000;
-}
+// .incomplete {
+//   background-color: #cc0000;
+// }
 
 .path-width{
-  min-width: 18em;
+  min-width: 10em;
 }
 
 .simple_overlay {
-  z-index: 10000;
-  border: 1px solid black;
+  // z-index: 10000;
+  // border: 1px solid black;
   background-color: white;
-  box-shadow: 10px 10px 5px #ccc;
+  box-shadow: inset 0 0 1em #006700;
   border-radius: 3px;
-  position: absolute;
+  position: relative;
   max-width: 16.75em;
   font-size: 1em;
-  // display: none;
+  text-align: center;
+  padding: 3px;
+  display: none;
+}
+
+.panel {
+  margin-top: 5px;
+  text-align: center;
+  min-width: 250px;
+  h2 {
+    font-size: 2em;
+  }
+}
+.center {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
 }
 
 
