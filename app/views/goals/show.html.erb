@@ -10,12 +10,14 @@
       <% if m.proof == nil %>
         <ul class="small-3 large-centered columns no-proof path-width">
           <li>
-            <%= m.title.capitalize %>
-            <%= m.completion_date.strftime("%A, %b %e %Y") %>
+            <strong><%= m.title.capitalize %></strong>
+          </li>
+          <li>
+            <h5 class="subheader"><%= m.completion_date.strftime("%A, %b %e %Y") %></h5>
           </li>
           <li>
             <div class="row done">
-              <%= link_to 'Done!', new_micro_goal_proof_path(m) %>
+              <%= link_to 'I did it!', new_micro_goal_proof_path(m) %>
             </div>
           </li>
         </ul>
@@ -23,9 +25,11 @@
       <% else %>
         <ul class="small-3 large-centered columns proof path-width">
           <li>
-            <%= m.title.capitalize %>
+            <strong><%= m.title.capitalize %></strong>
           </li>
-          <li class="simple_overlay"><%= m.proof.lesson %></li>
+          <li class="simple_overlay">
+            <h5 class="subheader"><%= m.proof.lesson %></h5>
+          </li>
         </ul>
         <!-- <div class="small-6 columns simple_overlay">
           <h3><%= m.proof.lesson %></h3>
@@ -48,7 +52,7 @@
 </div>
 <div class="small-4 large-centered columns clear">
   <div class="panel radius">
-      <h2 class="subheader center">
+      <h2 class="subheader">
         <%= @goal.verb.capitalize %> <%= @goal.title.downcase %>
       </h2>
   </div>
