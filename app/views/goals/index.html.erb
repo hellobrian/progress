@@ -1,10 +1,18 @@
-<h1>Goals#index</h1>
+<div class="row">
+  <div class="large-10 large-centered">
+      <% if @goals.length == 0 %>
+        <h1>Create a Goal</h1>
+        <%= link_to "" %>
+      <% else %>
+      <% end %>
 
 
-<% @goals.each do |goal| %>
-  <p>
-     <%= (goal.verb).capitalize %>: <%= link_to (goal.title).capitalize, goal_path(goal.id) %> by: <%= goal.completion_date %>
-  </p>
- 
+      <% @goals.each do |goal| %>
+        <p>
+           <%= (goal.verb).capitalize %>: <%= link_to (goal.title).capitalize, goal_path(goal.id) %> by: <%= goal.completion_date %>
+        </p>
+       
 
-<% end %>
+      <% end %>
+  </div>
+</div>
