@@ -7,6 +7,7 @@ gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'simple_form'
+gem 'ui_datepicker-rails3'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
