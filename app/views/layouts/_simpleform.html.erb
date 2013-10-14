@@ -1,7 +1,7 @@
 <%= simple_form_for @user, :html => { class: 'custom', multipart: true } do |f| %>      
   <div class="row">
     <div class="large-8">
-      <fieldset>
+      <fieldset><legend><h4>User Info</h4></legend>
         <%= f.input :first_name %>
         <br>
         <%= f.input :last_name %>
@@ -19,9 +19,9 @@
 
   <div class="row">
     <div class="large-8">
-      <fieldset>
+      <fieldset><legend><h4>Date of Birth</h4></legend>
         <div class="large-8">
-          <%= f.input :date_of_birth, label: 'Date of Birth', start_year: 1950, end_year: (Time.now).year %>  
+          <%= f.input :date_of_birth, label: false, start_year: 1950, end_year: (Time.now).year %>  
         </div>
       </fieldset>
     </div>
@@ -29,7 +29,7 @@
   
   <div class="row">
     <div class="large-8">
-      <fieldset>
+      <fieldset> <legend><h4>Profile Picture</h4></legend>
         <%= f.input :image, label: "Profile Pic" %>
         <br>
         <h6>or</h6>
