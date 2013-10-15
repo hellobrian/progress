@@ -25,7 +25,7 @@
     
     <%= render "layouts/nav" %>
 
-    <div class="container large-12 columns mainlayout">
+    <!-- <div class="container large-12 columns mainlayout"> -->
       
       <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
@@ -36,7 +36,7 @@
       <% end %>
       
       <%= yield %>
-    </div>
+    <!-- </div> -->
 
     <%= javascript_include_tag "application" %>
   </body>
