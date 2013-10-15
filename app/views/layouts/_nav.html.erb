@@ -9,7 +9,7 @@
    
     <section class="top-bar-section">
       <ul class="right">
-        <li class="divider"></li>
+        <!-- <li class="divider"></li> -->
         <li><%= link_to 'How Progress Works', "#", class: "nav" %></li>
         
         <li class="divider"></li>
@@ -23,7 +23,7 @@
           </ul>
         </li>
         <% if current_user %>
-          <li class="divider"></li>
+          <!-- <li class="divider"></li> -->
           <li class="has-dropdown">
             <%= link_to "#{current_user.first_name.capitalize}'s Profile", 
             user_path(current_user.id), class: "nav" %>
@@ -49,16 +49,16 @@
           </li>
         
           
-          <li class="divider"></li>
+          <!-- <li class="divider"></li> -->
           <li><%= link_to 'Logout', logout_path, class: 'logout' %></li>
         <% else %>
-          <li class="divider"></li>
+          <!-- <li class="divider"></li> -->
           <li><%= link_to 'Sign up', new_user_path, class: 'signup' %></li>
-          <li class="divider"></li>
+          <!-- <li class="divider"></li> -->
           <li><%= link_to 'Log in', login_path, class: 'login' %></li>
         <% end %>
 
-        <li class="divider"></li>
+        <!-- <li class="divider"></li> -->
         <li><%= link_to 'Add New Goal', new_goal_path, class: "new-goal" %></li>
       </ul>
       

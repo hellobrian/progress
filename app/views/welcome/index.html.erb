@@ -22,15 +22,44 @@
          > Stay self-motivated. 
       </h5>
 
+
+      <a href="#" data-reveal-id="login-modal" class="button">Log In</a>
  </div>
 
 
-<a href="#" data-reveal-id="myModal" class="radius button">Create Account</a>
 
 
 
 
-<div id="myModal" class="reveal-modal">
-  <h2>Log In</h2>
-  <%= simple_form_ %>
+
+<div id="login-modal" class="reveal-modal">
+  
+  <%= form_tag sessions_path, :method => :post do %>
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <fieldset>
+          <legend><h2>Log In</h2></legend>
+          
+          <div class="small-2 columns">
+            <%= label_tag 'email', 'Email', :class => 'right inline' %>  
+          </div>
+          <div class="small-10 columns">
+            <%= text_field_tag 'email' %>  
+          </div>
+          
+          <div class="small-2 columns">
+            <%= label_tag 'password', 'Password', :class => 'right inline' %>  
+          </div>
+          <div class="small-10 columns">
+            <%= password_field_tag 'password' %>  
+          </div>
+          <div class="small-2 columns"></div>
+          <div class="small-10 columns">
+            <%= submit_tag "Log in", :class => "tiny button" %>
+          </div>
+              
+        </fieldset>
+      </div>
+    </div>
+  <% end %>
 </div>
