@@ -3,5 +3,5 @@
 // # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $('.proof').click(function(){
-  $(this).closest('.simple_overlay').fadeToggle();
+  $(this).find('.simple_overlay').fadeToggle();
 });

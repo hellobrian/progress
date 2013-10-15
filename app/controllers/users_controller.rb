@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
+      UserMailer.welcome_email(@user).deliver
       redirect_to root_url, :notice => "Account Created"
     else
       render :new, :alert => "Please try again"
