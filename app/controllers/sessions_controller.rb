@@ -7,8 +7,11 @@ class SessionsController < ApplicationController
   	if @user = login(params[:email], params[:password])
   		redirect_back_or_to(user_path(current_user.id), :notice => 'Login Successful')
   	else
-  		# flash.now.alert = "Invalid email or password"
-  		redirect_to root_url, alert: "Invalid email or password!"
+  		flash.now.alert = "Invalid email or password"
+  		render :new
+      # respond_to do |format|
+      #   format.js
+      # end
   	end
   end
 
