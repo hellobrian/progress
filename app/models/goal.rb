@@ -24,7 +24,20 @@ class Goal < ActiveRecord::Base
 
   VERBS = %w[learn visit become stop start lose make solve improve meet build]
 
-# Add 1 point when a new goal is created
+  after_create :points_new_goal
 # Add 5 points when a micro goal is completed
 # Add 20 points when a goal is achieved
+
+  private
+
+  # Add 1 point when a new goal is created
+  def points_new_goal
+    self.points = 1
+    self.save
+  end
+
+  def points_completion_micro_goal
+    
+  end
+
 end
