@@ -12,7 +12,7 @@
 #
 
 class Proof < ActiveRecord::Base
-  attr_accessible :completed, :lesson, :micro_goal_id, :picture
+  attr_accessible :lesson, :micro_goal_id, :picture
   belongs_to :micro_goal
 
 
@@ -20,10 +20,19 @@ class Proof < ActiveRecord::Base
   validates :lesson, length: { maximum: 140 }
 
   after_validation :valid_proof
+  after_validation :points_completion_micro_goal
 
 private
 
   def valid_proof
-    self.completed = true
+    self.micro_goal.completed = true
+    self.micro_goal.save
   end
+
+  # Add 5 points when a micro_goal is completed
+  def points_completion_micro_goal
+    self.micro_goal.goal.points += 5
+    self.micro_goal.goal.save
+  end
+
 end
