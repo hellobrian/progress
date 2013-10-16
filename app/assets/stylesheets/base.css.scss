@@ -98,6 +98,30 @@ div.homepage-buttons {
 
 //// FORMS
 
+fieldset.user-info {
+  width: 100%;
+}
+
+fieldset.user {
+  width: 100%;
+  div.input {
+    width: 100%;
+  }
+}
+
+fieldset.dob-profile {
+  width: 100%;
+  div.user_date_of_birth {
+    float: left;
+    width: 45%;
+  }
+  div.profile-pic, div.create {
+    float: right; 
+    width: 45%;
+  }
+}
+
+
 // Who are you? -------------------
 
 .verb {
@@ -112,46 +136,6 @@ div.homepage-buttons {
   padding-bottom: 0.5em;
 }
 
-
-fieldset.signup {
-  background-color: $vert;
-  border: 5px solid $mediumvert;
-  box-shadow: 3px 3px 5px #ccc;
-}
-
-fieldset.signup label {
-
-  padding: 3px;
-  margin-bottom: 10px;
-  width: 20%;
-}
-
-legend.signup {
-  background-color: $mediumvert;
-  box-shadow: 1px 1px 0px $darkvert, 2px 2px 0px $darkvert, 3px 3px 0px $darkvert;
-  padding: 10px;
-}
-
-// Date of Birth -------------------
-
-fieldset.dob {
-  background-color: $lighttomatored;
-  border: 5px solid $tomatored;
-  box-shadow: 3px 3px 5px #ccc;
-}
-
-fieldset.dob label {
-
-  padding: 3px;
-  margin-bottom: 10px;
-
-}
-
-legend.dob {
-  background-color: $tomatored;
-  box-shadow: 1px 1px 0px $darktomato, 2px 2px 0px $darktomato, 3px 3px 0px $darktomato;
-  padding: 10px;
-}
 
 /// NEW GOAL
 

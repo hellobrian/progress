@@ -1,42 +1,28 @@
-<%= simple_form_for @user, :html => { class: 'custom', multipart: true } do |f| %>      
-  <div class="row">
-    <div style="float: left;" class="large-12">
-      <fieldset><legend><h4>User Info</h4></legend>
-        <div style="float: left;" class="large-5">
+<div class="row">
+  <div class="large-12">
+
+    <%= simple_form_for @user, 
+    :html => { class: 'custom', multipart: true } do |f| %> 
+      <fieldset class="user-info"><legend><h4>User Info</h4></legend>
+        <fieldset class="user">
           <%= f.input :first_name %>
-          <br>
           <%= f.input :last_name %>
-        </div>
-        <div style="float: left; padding-left: 5%;" class="large-5">
           <%= f.input :email, placeholder: 'user@example.com' %>
-          <br>
           <%= f.input :password %>
-          <div class="large-12">
           <%= f.input :gender, collection: [:male, :female] %>
-        </div>
-        </div>
+        </fieldset>
+        <fieldset class="dob-profile">
+          <%= f.input :date_of_birth %>       
+          <div class="profile-pic">
+            <%= f.input :image, label: "Profile Pic" %>
+            <%= f.input :remote_image_url, label: "link to image url" %>
+          </div>
+          <div class="create">
+            <%= f.button :submit, class: "create" %>
+          </div>
+
+        </fieldset>
       </fieldset>
-    </div>
-    <div style="float: left;" class="large-6">
-      <fieldset style="padding-bottom: 10%;"><legend><h4>Date of Birth</h4></legend>
-        <div class="large-12"> 
-          <%# f.input :date_of_birth, :as => :ui_date_picker %>
-          <%= f.input :date_of_birth %>
-        </div>
-      </fieldset>
-    </div>
-    <div style="float: left;" class="large-6">
-      <fieldset> <legend><h4>Profile Picture</h4></legend>
-        <div class="large-6">
-          <%= f.input :image, label: "Profile Pic" %>
-        </div>
-        <div class="large-6"></div>
-          <%= f.input :remote_image_url, label: "link to image url" %>
-        <br>
-        <div class="large-12">
-          <%= f.button :submit %>
-        </div>  
-      </fieldset>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
