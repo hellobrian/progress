@@ -10,6 +10,7 @@
       <li class="step-incomplete">
         <div.title>
           <p><%= m.title.capitalize %></p>
+          <%= link_to 'Done!', new_micro_goal_proof_path(m) %>
         </div> 
 
 
@@ -24,3 +25,5 @@
     <% end %>
   <% end %>
 </ul> 
+
+<%= "You've earned: #{@goal.points}" %>
