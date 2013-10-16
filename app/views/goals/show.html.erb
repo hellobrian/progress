@@ -1,4 +1,4 @@
-
+<% @micro_goal = MicroGoal.new %>
 <h1 class="subheader goal">
   <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
 </h1>
@@ -60,11 +60,15 @@
 <br>
 <div class="row clear">
   <div class="small-4 small-centered">
-    <%= link_to "Add microgoals", new_goal_micro_goal_url(@goal.id) %> |
-    <%= link_to "Back to Goals", goals_path %> 
+    <a href="#" data-reveal-id="add-microgoal" class="tiny button">add microgoal</a>
+    <%# link_to "Add microgoals", new_goal_micro_goal_url(@goal.id), class: "tiny button" %> |
+    <%= link_to "Back to Goals", goals_path, class: "secondary tiny button" %> 
   </div>
 </div>
 
+<div id="add-microgoal" class="reveal-modal large">
+  <%= render "layouts/microgoal_simpleform" %>
+</div>
 
 
 
