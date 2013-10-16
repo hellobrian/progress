@@ -7,7 +7,7 @@
   <% @micro_goals.each do |m| %>
     <div class="row">
       <!-- if there is no proof -->
-      <% if m.proof == nil %>
+      <% if m.completed == nil %>
         <ul class="small-3 large-centered columns no-proof path-width">
           <li>
             <strong><%= m.title.capitalize %></strong>

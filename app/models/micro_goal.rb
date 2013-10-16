@@ -11,7 +11,7 @@
 #
 
 class MicroGoal < ActiveRecord::Base
-  attr_accessible :completion_date, :goal_id, :title
+  attr_accessible :completion_date, :goal_id, :title, :completed
 
   validates :title, :completion_date, presence: true
 
