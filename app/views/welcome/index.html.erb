@@ -9,11 +9,10 @@
     <li class="big-line">&nbsp;</li>
     <li class="step3">Prove each step.</li>
     <li class="big-line">&nbsp;</li>
-
   </ul> 
 </div>
 
-<div class="homepage-buttons large-3 small-8 large-centered small-centered columns">
+<div class="homepage-buttons large-4 small-12 large-centered small-centered columns">
   <fieldset>
   <% if current_user %>
     <a href="#" data-reveal-id="newgoal-modal" class="large success button expand">Add New Goal</a>
@@ -24,35 +23,6 @@
   </fieldset>
 </div>
 
-<div id="login-modal" class="reveal-modal small">
-  <%= form_tag sessions_path, :method => :post do %>
-    <div class="row">
-      <div class="small-12 small-centered columns">
-        <fieldset>
-          <legend><h2>Log In</h2></legend>
-          
-          <div class="small-2 columns">
-            <%= label_tag 'email', 'Email', :class => 'right inline' %>  
-          </div>
-          <div class="small-10 columns">
-            <%= text_field_tag 'email' %>  
-          </div>
-          
-          <div class="small-2 columns">
-            <%= label_tag 'password', 'Password', :class => 'right inline' %>  
-          </div>
-          <div class="small-10 columns">
-            <%= password_field_tag 'password' %>  
-          </div>
-          <div class="small-2 columns"></div>
-          <div class="small-10 columns">
-            <%= submit_tag "Log in", :class => "tiny button" %>
-          </div>
-              
-        </fieldset>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render "layouts/login_modal" %>
 
   
