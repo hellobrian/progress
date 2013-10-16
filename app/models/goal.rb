@@ -25,6 +25,7 @@ class Goal < ActiveRecord::Base
   VERBS = %w[learn visit become stop start lose make solve improve meet build]
 
   after_create :points_new_goal
+  after_create :check_status
 
 # Add 20 points when a goal is achieved
 
@@ -34,6 +35,16 @@ class Goal < ActiveRecord::Base
   def points_new_goal
     self.points = 5
     self.save
+  end
+
+  def check_status
+    if self.points < 50
+      self.user.status = "Fresh out of the gates"
+    elsif self.points < 120
+      self.user.status = "Achiever"
+    else
+      self.user.status = "Go Getter!"
+    end
   end
 
 end

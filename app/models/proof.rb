@@ -22,6 +22,7 @@ class Proof < ActiveRecord::Base
   after_create :valid_proof
   after_create :points_completion_micro_goal
   after_create :points_completion_goal?
+  after_create :check_status
 
 private
 
@@ -45,6 +46,17 @@ private
         goal.points += 100
         goal.save
       end
+  end
+
+  def check_status
+    user = self.micro_goal.goal.user
+    if user.points < 50
+      user.status = "Fresh out of the gates"
+    elsif user.points < 120
+      user.status = "Achiever"
+    else
+      user.status = "Go Getter!"
+    end
   end
 
 end
