@@ -29,14 +29,21 @@ h2.welcome {
   background-color: black;
   text-align: center;
   opacity: 0.9;
-  transition: 1s;
+  transition: 0.14s;
+  &:hover {
+    box-shadow: 0 10px 0px #323232;
+    transition: 0.14;
+    opacity: 1;
+    color: black;
+    margin-bottom: 35px;
+  }
 }
 
 ul.steps {
   margin-top: -25px;
   text-align: center;
   font-size: 150%;
-  opacity: 0.7;
+  
 
   li.big-line {
     width: 0.5%;
@@ -49,23 +56,46 @@ ul.steps {
     width: 33.3333%;
     margin-left: 33.3333%;
     padding: 10px;
+    box-shadow: none;
+    transition: 0.14s;
+    opacity: 0.9;
+    &:hover {
+      box-shadow: 0px 10px 0px #e17366;
+      transition: 0.14s;
+      opacity: 1;
+      margin-bottom: 10px;
+    }
   }
   li.step2 {
     background-color: orange; 
     width: 33.3333%;
     margin-left: 33.3333%;
     padding: 10px;
+    opacity: 0.9;
+    &:hover {
+      box-shadow: 0px 10px 0px #e59400;
+      transition: 0.14s;
+      margin-bottom: 10px;
+      opacity: 1;
+    }
   }
   li.step3 {
     background-color: turquoise;
     width: 33.3333%;
     margin-left: 33.3333%;
     padding: 10px;
+    opacity: 0.9;
+    &:hover {
+      box-shadow: 0px 10px 0px #39c9bb;
+      transition: 0.14s;
+      margin-bottom: 10px;
+      opacity: 1;
+    }
   }
 }
 
 div.homepage-buttons {
-  margin-top: -25px;
+  margin-top: -30px;
   fieldset {
     padding-bottom: 5px;
   }
