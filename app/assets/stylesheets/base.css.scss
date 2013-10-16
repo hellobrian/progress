@@ -6,6 +6,15 @@ $lighttomatored: #ffb1a3;
 $tomatored: #ff826b;
 $darktomato: #993b2a;
 
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Arapey', serif;
+// font-family: 'Open Sans', sans-serif;
+
+h1, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+
 /// WELCOME
 
 .welcome-forest {
@@ -13,21 +22,26 @@ $darktomato: #993b2a;
   width: 100%;
 }
 
-h2 {
+img.welcome {
+  opacity: 0.8;
+}
+
+h2.welcome {
   position: absolute;
-  top: 300px;
+  top: 25%;
   width: 100%;
-  font-size: 5em;
-}
-
-h2 span {
+  font-size: 400%;
   color: white;
-  // letter-spacing: 0.125em;  
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1em; 
-}
+  background-color: transparent;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // text-shadow: 0px 12px 50px black;
+  text-shadow: 10px -10px 50px black;
+  font-weight: bold;
+  
 
+}
 
 //// FORMS
 
@@ -93,6 +107,7 @@ label.verb {
 }
 
 // NAVBAR -------------------
+
 nav.top-bar.toggle-topbar ul.title-area li.name a.title,
 section.top-bar-section ul.right li a.nav {
   transition: 0.2s;

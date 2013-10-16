@@ -1,53 +1,49 @@
 <div class="welcome-forest">
-  <%= image_tag "welcome_forest_copy.jpg" %>
-  <h2><span>Progress</span></h2>
-</div>
-<div class="row">
-  <div class="large-12 large-centered columns">
-    <!-- <h1 style="text-align: center; font-size: 3em; z-index: 10000;">PROGRESS</h1> -->
-    
-    <div class="large-3 large-centered columns">
-      <% if current_user %>
-        <a href="#" data-reveal-id="newgoal-modal" class="success large expand button">Add New Goal</a>
-      <% else %>
-        <a style="float: right;" href="#" data-reveal-id="signup-modal" class="large expand success button">Sign Up</a>
-        <a href="#" data-reveal-id="login-modal" class="large expand button">Log In</a>
-      <% end %>
-      
-        
-    </div>
-    
-
-    <div id="login-modal" class="reveal-modal medium">
-      <%= form_tag sessions_path, :method => :post do %>
-        <div class="row">
-          <div class="small-12 small-centered columns">
-            <fieldset>
-              <legend><h2>Log In</h2></legend>
-              
-              <div class="small-2 columns">
-                <%= label_tag 'email', 'Email', :class => 'right inline' %>  
-              </div>
-              <div class="small-10 columns">
-                <%= text_field_tag 'email' %>  
-              </div>
-              
-              <div class="small-2 columns">
-                <%= label_tag 'password', 'Password', :class => 'right inline' %>  
-              </div>
-              <div class="small-10 columns">
-                <%= password_field_tag 'password' %>  
-              </div>
-              <div class="small-2 columns"></div>
-              <div class="small-10 columns">
-                <%= submit_tag "Log in", :class => "tiny button" %>
-              </div>
-                  
-            </fieldset>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
+  <%= image_tag "ocean1.jpg", class: "welcome" %>
+  <h2 class="welcome subheader">Progress</h2>  
+  
+  
+  <div class="large-2 large-centered columns">
+    <% if current_user %>
+      <a href="#" data-reveal-id="newgoal-modal" class="button expand">Add New Goal</a>
+    <% else %>
+      <a href="#" data-reveal-id="signup-modal" class="button expand">Sign Up</a>
+      <a href="#" data-reveal-id="login-modal" class="button expand">Log In</a>
+    <% end %>
   </div>
+  
+  
 </div>
+
+<div id="login-modal" class="reveal-modal small">
+  <%= form_tag sessions_path, :method => :post do %>
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <fieldset>
+          <legend><h2>Log In</h2></legend>
+          
+          <div class="small-2 columns">
+            <%= label_tag 'email', 'Email', :class => 'right inline' %>  
+          </div>
+          <div class="small-10 columns">
+            <%= text_field_tag 'email' %>  
+          </div>
+          
+          <div class="small-2 columns">
+            <%= label_tag 'password', 'Password', :class => 'right inline' %>  
+          </div>
+          <div class="small-10 columns">
+            <%= password_field_tag 'password' %>  
+          </div>
+          <div class="small-2 columns"></div>
+          <div class="small-10 columns">
+            <%= submit_tag "Log in", :class => "tiny button" %>
+          </div>
+              
+        </fieldset>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+  
