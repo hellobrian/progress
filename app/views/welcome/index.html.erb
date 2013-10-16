@@ -15,14 +15,16 @@
 <div class="homepage-buttons large-4 small-12 large-centered small-centered columns">
   <fieldset>
   <% if current_user %>
-    <a href="#" data-reveal-id="newgoal-modal" class="large success button expand">Add New Goal</a>
+    <%= link_to "Add New Goal", new_goal_path, class: "large button expand success" %>
   <% else %>
-    <a href="#" data-reveal-id="signup-modal" class="large success button expand">Sign Up</a>
+    <%= link_to "Start Progress", new_user_path, class: "large button expand success" %>
     <a href="#" data-reveal-id="login-modal" class="large button expand">Log In</a>
   <% end %>
   </fieldset>
 </div>
 
-<%= render "layouts/login_modal" %>
+<div id="login-modal" class="reveal-modal small">
+  <%= render "layouts/login_modal" %>  
+</div>
 
-  
+

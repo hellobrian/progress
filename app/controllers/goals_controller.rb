@@ -9,7 +9,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(params[:goal])
     @goal.user_id = current_user.id
     if @goal.save
-      redirect_to goal_path(@goal), :notice => "Goal Created, Add some micogoals."
+      redirect_to user_path(@goal.user_id), :notice => "Goal Created, Add some micogoals."
     else
       render :new
     end
