@@ -1,6 +1,85 @@
 $linecolor: #808080;
 $incomplete: #7C0B04;
 
+//======== Goal Path =====================//
+
+h2.goal-path {
+  font-size: 300%;
+  padding: 50px 50px 20px 50px;
+  margin-top: -10px;
+  margin-bottom: 35px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  opacity: 0.9;
+  box-shadow: 0 10px 0px #323232;
+}
+
+a.done {
+  margin-top: 1em;
+  padding: 20px;
+}
+
+ul.steps {
+  margin-top: -25px;
+  text-align: center;
+  font-size: 100%;
+  
+
+  li.big-line {
+    width: 0.5%;
+    margin-left: 49.5%; 
+    background-color: gray;
+  }
+
+  li.step-incomplete {
+    background-color: salmon; 
+    width: 20%;
+    margin-left: 40%;
+    padding: 10px;
+    box-shadow: none;
+    transition: 0.14s;
+    opacity: 0.9;
+    &:hover {
+      transition: 0.14s;
+      opacity: 1;
+      background-color: #fba69c;
+      box-shadow: 100px 0px 0px salmon;
+    }
+  }
+  li.step-date {
+    background-color: orange; 
+    width: 20%;
+    margin-left: 40%;
+    padding: 10px;
+    opacity: 0.9;
+    &:hover {
+      box-shadow: 0px 10px 0px #e59400;
+      transition: 0.14s;
+      margin-bottom: 10px;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+//===============================================================//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // MicroGoal items
 

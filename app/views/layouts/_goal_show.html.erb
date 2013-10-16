@@ -1,0 +1,26 @@
+<h2 class="goal-path">
+  <%= "#{@goal.verb.capitalize} #{@goal.title}" %>
+</h2> 
+<ul class="steps">
+  <% @micro_goals.each do |m| %>
+    <% 2.times do %>
+      <li class="big-line">&nbsp;</li>
+    <% end %>
+    <% if m.completed == nil %>
+      <li class="step-incomplete">
+        <div.title>
+          <p><%= m.title.capitalize %></p>
+        </div> 
+
+
+      </li>
+      <li class="step-date"><%= m.completion_date.strftime("%A, %b, %e, %Y") %>
+        <br>
+      </li>
+    <% else %>
+      <li class="step3">
+        <%= m.title.capitalize %>
+      </li>
+    <% end %>
+  <% end %>
+</ul> 
