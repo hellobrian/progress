@@ -25,18 +25,13 @@ h2.welcome {
   font-size: 300%;
   padding: 50px 50px 20px 50px;
   margin-top: -10px;
+  margin-bottom: 35px;
   color: white;
   background-color: black;
   text-align: center;
   opacity: 0.9;
+  box-shadow: 0 10px 0px #323232;
   transition: 0.14s;
-  &:hover {
-    box-shadow: 0 10px 0px #323232;
-    transition: 0.14;
-    opacity: 1;
-    color: white;
-    margin-bottom: 35px;
-  }
 }
 
 ul.steps {
@@ -53,8 +48,8 @@ ul.steps {
 
   li.step1 {
     background-color: salmon; 
-    width: 33.3333%;
-    margin-left: 33.3333%;
+    width: 20%;
+    margin-left: 40%;
     padding: 10px;
     box-shadow: none;
     transition: 0.14s;
@@ -68,8 +63,8 @@ ul.steps {
   }
   li.step2 {
     background-color: orange; 
-    width: 33.3333%;
-    margin-left: 33.3333%;
+    width: 20%;
+    margin-left: 40%;
     padding: 10px;
     opacity: 0.9;
     &:hover {
@@ -81,8 +76,8 @@ ul.steps {
   }
   li.step3 {
     background-color: turquoise;
-    width: 33.3333%;
-    margin-left: 33.3333%;
+    width: 20%;
+    margin-left: 40%;
     padding: 10px;
     opacity: 0.9;
     &:hover {
