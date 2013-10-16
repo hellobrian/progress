@@ -15,7 +15,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   	<title><%= content_for?(:title) ? yield(:title) : "Progress" %></title>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat|Arapey|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat|Arapey|Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -23,20 +23,16 @@
 
   <body>
     
-    <%= render "layouts/nav" %>
+    <%= render "layouts/nav" %>  
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
 
-    <!-- <div class="container large-12 columns mainlayout"> -->
-      
-      <% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
-      <% end %>
-
-      <% if flash[:alert] %>
-        <p><%= flash[:alert] %></p>
-      <% end %>
-      
-      <%= yield %>
-    <!-- </div> -->
+    <% if flash[:alert] %>
+      <p><%= flash[:alert] %></p>
+    <% end %>
+    
+    <%= yield %>
 
     <%= javascript_include_tag "application" %>
   </body>

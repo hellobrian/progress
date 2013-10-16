@@ -1,17 +1,27 @@
-<div class="welcome-image">
-  <%= image_tag "ocean1.jpg" %>
-  <h2 class="welcome subheader">Progress</h2>  
-  
-  <div class="large-2 large-centered columns">
-    <% if current_user %>
-      <a href="#" data-reveal-id="newgoal-modal" class="button expand">Add New Goal</a>
-    <% else %>
-      <a href="#" data-reveal-id="signup-modal" class="button expand">Sign Up</a>
-      <a href="#" data-reveal-id="login-modal" class="button expand">Log In</a>
-    <% end %>
-  </div>
-  
-  
+
+<div class="progress-welcome">
+  <h2 class="welcome">Progress</h2> 
+  <ul class="steps">
+    <li class="big-line">&nbsp;</li>
+    <li class="step1">Achieve your goals</li>
+    <li class="big-line">&nbsp;</li>
+    <li class="step2">One step at a time.</li>
+    <li class="big-line">&nbsp;</li>
+    <li class="step3">Prove each step.</li>
+    <li class="big-line">&nbsp;</li>
+
+  </ul> 
+</div>
+
+<div class="homepage-buttons large-3 small-8 large-centered small-centered columns">
+  <fieldset>
+  <% if current_user %>
+    <a href="#" data-reveal-id="newgoal-modal" class="large success button expand">Add New Goal</a>
+  <% else %>
+    <a href="#" data-reveal-id="signup-modal" class="large success button expand">Sign Up</a>
+    <a href="#" data-reveal-id="login-modal" class="large button expand">Log In</a>
+  <% end %>
+  </fieldset>
 </div>
 
 <div id="login-modal" class="reveal-modal small">

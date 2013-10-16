@@ -17,31 +17,58 @@ h1, h3, h4, h5, h6 {
 
 /// WELCOME
 
-.welcome-image {
-  // position: relative;
-  // width: 100%;
-  background-image: url(assets/images/ocean1.jpg); // ASK MINA!!!
-}
-
 img.welcome {
   opacity: 0.8;
 }
 
 h2.welcome {
-  position: absolute;
-  top: 25%;
-  width: 100%;
-  font-size: 400%;
+  font-size: 300%;
+  padding: 50px 50px 20px 50px;
+  margin-top: -10px;
   color: white;
-  background-color: transparent;
+  background-color: black;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  // text-shadow: 0px 12px 50px black;
-  text-shadow: 10px -10px 50px black;
-  font-weight: bold;
-  
+  opacity: 0.9;
+  transition: 1s;
+}
 
+ul.steps {
+  margin-top: -25px;
+  text-align: center;
+  font-size: 150%;
+  opacity: 0.7;
+
+  li.big-line {
+    width: 0.5%;
+    margin-left: 49.5%; 
+    background-color: gray;
+  }
+
+  li.step1 {
+    background-color: salmon; 
+    width: 33.3333%;
+    margin-left: 33.3333%;
+    padding: 10px;
+  }
+  li.step2 {
+    background-color: orange; 
+    width: 33.3333%;
+    margin-left: 33.3333%;
+    padding: 10px;
+  }
+  li.step3 {
+    background-color: turquoise;
+    width: 33.3333%;
+    margin-left: 33.3333%;
+    padding: 10px;
+  }
+}
+
+div.homepage-buttons {
+  margin-top: -25px;
+  fieldset {
+    padding-bottom: 5px;
+  }
 }
 
 //// FORMS
@@ -109,14 +136,26 @@ label.verb {
 
 // NAVBAR -------------------
 
-nav.top-bar.toggle-topbar ul.title-area li.name a.title,
+nav.top-bar {
+  background-color: black;
+}
+
+ul.title-area li.name a.title,
 section.top-bar-section ul.right li a.nav {
+  background-color: black;
+  color: white;
   transition: 0.2s;
   &:hover {
     background-color: #FF3800;
     transition: 0.2s;
   }
 }
+
+ul.right li.divider {
+  background-color: black;
+}
+
+
 // Add New Goal
 nav section.top-bar-section ul.right li a.new-goal {
   background-color: green;
