@@ -47,6 +47,22 @@ ul.steps {
       box-shadow: 100px 0px 0px salmon;
     }
   }
+
+  li.step-complete {
+    background-color: lightGreen; 
+    width: 20%;
+    margin-left: 40%;
+    padding: 10px;
+    box-shadow: none;
+    transition: 0.14s;
+    opacity: 0.9;
+    &:hover {
+      transition: 0.14s;
+      opacity: 1;
+      background-color: lightGreen;
+      box-shadow: 100px 0px 0px #73be73;
+    }
+  }
   li.step-date {
     background-color: orange; 
     width: 20%;
