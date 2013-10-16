@@ -6,7 +6,6 @@
 #  micro_goal_id :integer
 #  lesson        :text
 #  picture       :binary
-#  completed     :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

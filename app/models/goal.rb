@@ -10,6 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  verb            :string(255)
+#  points          :integer
 #
 
 class Goal < ActiveRecord::Base
