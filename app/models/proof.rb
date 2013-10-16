@@ -32,7 +32,7 @@ private
 
   # Add 5 points when a micro_goal is completed
   def points_completion_micro_goal
-    self.micro_goal.goal.points += 5
+    self.micro_goal.goal.points += 20
     self.micro_goal.goal.save
   end
 
@@ -42,7 +42,7 @@ private
         goal.micro_goals.include?(completed: nil)
         return
       else
-        goal.points += 20
+        goal.points += 100
         goal.save
       end
   end

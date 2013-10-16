@@ -32,7 +32,7 @@ class Goal < ActiveRecord::Base
 
   # Add 1 point when a new goal is created
   def points_new_goal
-    self.points = 1
+    self.points = 5
     self.save
   end
 
