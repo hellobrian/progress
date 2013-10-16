@@ -19,8 +19,9 @@ class Proof < ActiveRecord::Base
   validates :lesson, presence: true
   validates :lesson, length: { maximum: 140 }
 
-  after_validation :valid_proof
-  after_validation :points_completion_micro_goal
+  after_create :valid_proof
+  after_create :points_completion_micro_goal
+  after_create :points_completion_goal?
 
 private
 
@@ -33,6 +34,17 @@ private
   def points_completion_micro_goal
     self.micro_goal.goal.points += 5
     self.micro_goal.goal.save
+  end
+
+  def points_completion_goal?
+      goal = self.micro_goal.goal
+      if
+        goal.micro_goals.include?(completed: nil)
+        return
+      else
+        goal.points += 20
+        goal.save
+      end
   end
 
 end
