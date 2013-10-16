@@ -31,11 +31,11 @@ class Goal < ActiveRecord::Base
 
   private
 
-  # Add 5 point when a new goal is created
+  # Add 5 points for creating a new goal
   def points_new_goal
     self.points = 5
-    add_user_points(self.points)
     self.save
+    add_user_points(5)
   end
 
   def add_user_points(points)
@@ -46,10 +46,13 @@ class Goal < ActiveRecord::Base
   def check_status
     if self.user.points < 50
       self.user.status = "Fresh out of the gates"
+      self.user.save
     elsif self.user.points < 120
       self.user.status = "Achiever"
+      self.user.save
     else
       self.user.status = "Go Getter!"
+      self.user.save
     end
   end
 

@@ -35,10 +35,12 @@ class User < ActiveRecord::Base
 
   def add_status
     self.status = "Fresh out of the gates"
+    self.save
   end
 
   def initialize_points
     self.points = 0
+    self.save
   end
-  
+
 end
