@@ -1,6 +1,7 @@
 <h2 class="goal-path">
   <%= "#{@goal.verb.capitalize} #{@goal.title}" %>
-</h2> 
+</h2>
+ 
 <ul class="steps">
   <% @micro_goals.each do |m| %>
     <li class="big-line">&nbsp;</li>
@@ -16,11 +17,28 @@
       </li> 
     <% else %>
       <li class="step-complete">
-        <%= m.title.capitalize %>
+        <h6><%= m.title.capitalize %></h6>
+        <div id="proof">
+          <p><%= m.proof.lesson %></p>
+        </div>
       </li>
     <% end %>
     <li class="big-line">&nbsp;</li>
   <% end %>
+
+  <li><div class="add-microgoal">
+    <a href="#" data-reveal-id="add-microgoal" class="success button expand">add microgoal</a></div>
+  </li>
+
+  <li class="big-line">&nbsp;</li>
+  <li class="big-line">&nbsp;</li>
+  <li class="main-goal">
+    <div class="text">
+      <p>You're getting closer to achieving your goal:</p>
+      <p class="main-goal"><%= "#{@goal.verb.capitalize} #{@goal.title}" %></p>
+      <p><%= "You've earned: #{@goal.points} points!" %></p>
+      <%= link_to "Back to Profile", user_path(current_user.id), class: "tiny button" %>
+    </div>
+  </li>
 </ul> 
 
-<%= "You've earned: #{@goal.points}" %>

@@ -2,73 +2,7 @@
 
 <% @micro_goal = MicroGoal.new %>
 
-
-<h1 class="subheader goal">
-  <%= @goal.user.first_name %> <%= @goal.user.last_name %> wants to:
-</h1>
-<h2 class="goal"><%= @goal.verb.capitalize %> <%= @goal.title.downcase %></h2>
-<div class="small-12 large-centered columns">
-  <% @micro_goals.each do |m| %>
-    <div class="row">
-      <!-- if there is no proof -->
-      <% if m.completed == nil %>
-        <ul class="small-3 large-centered columns no-proof path-width">
-          <li>
-            <strong><%= m.title.capitalize %></strong>
-          </li>
-          <li>
-            <h5 class="subheader"><%= m.completion_date.strftime("%A, %b %e %Y") %></h5>
-          </li>
-          <li>
-            <div class="row done">
-              <%= link_to 'I did it!', new_micro_goal_proof_path(m) %>
-            </div>
-          </li>
-        </ul>
-      <!-- if there is proof -->
-      <% else %>
-        <ul class="small-3 large-centered columns proof path-width">
-          <li>
-            <strong><%= m.title.capitalize %></strong>
-          </li>
-          <li class="simple_overlay">
-            <h5 class="subheader"><%= m.proof.lesson %></h5>
-          </li>
-        </ul>
-        <!-- <div class="small-6 columns simple_overlay">
-          <h3><%= m.proof.lesson %></h3>
-        </div> -->
-      <% end %>
-    </div>
-    <!-- Creating the connecting line -->
-    <% 3.times do %>
-      <div class="row">
-        <div class="small-1 large-centered columns">
-          <div class="small-1 large-centered columns">
-            <ul class="small-block-grid-1">
-              <li class="line"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <% end %>  
-  <% end %>
-</div>
-<div class="small-4 large-centered columns clear">
-  <div class="panel radius">
-      <h2 class="subheader">
-        <%= @goal.verb.capitalize %> <%= @goal.title.downcase %>
-      </h2>
-  </div>
-</div> 
-<br>
-
-<a href="#" data-reveal-id="add-microgoal" class="tiny button">add microgoal</a>
-<%# link_to "Add microgoals", new_goal_micro_goal_url(@goal.id), class: "tiny button" %> |
-<%= link_to "Back to Goals", goals_path, class: "secondary tiny button" %> 
-
-
-<div id="add-microgoal" class="reveal-modal large">
+<div id="add-microgoal" class="reveal-modal small">
   <%= render "layouts/microgoal_simpleform" %>
 </div>
 
