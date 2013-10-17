@@ -2,11 +2,15 @@ ActiveAdmin.register Goal do
   scope "Today's Goals",:goals_today
 
   index do
-    column :user_id
+    column "User", :user_id do |goal|
+      link_to "#{goal.user.first_name} #{goal.user.last_name}", admin_user_path(goal.user_id) 
+    end
     column :verb, :sortable => :verb do |goal|
       goal.verb.capitalize
     end
-    column :title
+    column :title do |goal|
+      link_to goal.title, admin_goal_path(goal)
+    end
     column :motivation
     column :points
     column "Creation Date",:created_at, :sortable => :created_at do |goal|

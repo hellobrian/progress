@@ -1,7 +1,10 @@
 ActiveAdmin.register User do
   scope :new_users
-  
+
   index do
+    column :id do |user|
+      link_to user.id, admin_user_path(user)
+    end
     column :first_name
     column :last_name
     column :email
