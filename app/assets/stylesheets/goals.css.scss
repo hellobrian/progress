@@ -54,9 +54,22 @@ ul.steps {
     padding: 10px;
     box-shadow: 0px 10px 0px #73be73;
     opacity: 1;
+    h6.title {
+      background-color: green;
+      color: white;
+      padding: 5px;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px black;
+    }
     div#proof p {
       background-color: white;
       padding: 5px;
+      box-shadow: none;
+      transition: 0.14s;
+      &:hover {
+        box-shadow: 0 5px 20px black;
+        transition: 0.14s;  
+      }   
     }
   }
   li.step-date {
