@@ -1,27 +1,20 @@
 <div class="fixed">
   <nav class="top-bar toggle-topbar">
     <ul class="title-area">
-      <li class="name"><h1><%= link_to 'Home', root_path, class: "title" %></h1></li>
+      <li class="name"><h1><%= link_to 'Progress', root_path, class: "title" %></h1></li>
       <li class="toggle-topbar">
         <a class="menu" href="#">Menu</a>
       </li>
     </ul>
    
     <section class="top-bar-section">
+      <ul class="left">
+        <li><%= link_to 'Add New Goal', new_goal_path, class: "new-goal" %></li>
+      </ul>
       <ul class="right">
-        <!-- <li class="divider"></li> -->
-        <li><%= link_to 'How Progress Works', "#", class: "nav" %></li>
         
         <li class="divider"></li>
-        <li class="has-dropdown"><a href="#" class="nav">About Us</a>
-          <ul class="dropdown">
-            
-            <li><%= link_to "Our Story", "#" %></li>
-            <li><%= link_to "Our Team", "#" %></li>
-            <li><%= link_to "Contact Us", "#" %></li>
-            
-          </ul>
-        </li>
+        
         <% if current_user %>
           <!-- <li class="divider"></li> -->
           <li class="has-dropdown">
@@ -31,8 +24,8 @@
               <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
               <li class="has-dropdown"><%= link_to 'Goals', goals_path %>
                 <ul class="dropdown">
-                  <li><%= link_to 'Compeleted Goals', '#' %></li>
                   <li><%= link_to 'Current Goals', goals_path %></li>
+                  <li><%= link_to 'Compeleted Goals', '#' %></li>
                   <li><%= link_to 'Unfinished Goals', '#' %></li>
                 </ul>
               </li>
@@ -59,7 +52,7 @@
         <% end %>
 
         <!-- <li class="divider"></li> -->
-        <li><%= link_to 'Add New Goal', new_goal_path, class: "new-goal" %></li>
+        
       </ul>
       
     </section>
