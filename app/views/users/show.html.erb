@@ -1,4 +1,9 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="profile-header" 
+style="background-image: url(<%= @user.image.url(:image).to_s %>)">
+  <h2><%= @user.first_name %></h2><h2><%= @user.last_name %></h2>
+</div>
+
+
 
 <% if @user.image == nil %>
   <%= image_tag('rails.png') %>
@@ -12,5 +17,6 @@
 
 <h2>Goals</h2>
 <% @user.goals.each do |goal| %>
-  <%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), class: "button medium secondary" %> <br>
+  <%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), 
+  class: "button medium secondary" %> <br>
 <% end %>
