@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+  scope :new_users
+  
   index do
     column :first_name
     column :last_name
