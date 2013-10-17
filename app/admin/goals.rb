@@ -1,5 +1,5 @@
 ActiveAdmin.register Goal do
-  scope "Today's Goals",:goals_today
+  scope "Upcoming Goal Completions",:goals_today
 
   index do
     column "User", :user_id do |goal|
@@ -9,7 +9,7 @@ ActiveAdmin.register Goal do
       goal.verb.capitalize
     end
     column :title do |goal|
-      link_to goal.title, admin_goal_path(goal)
+      link_to goal.title, [:admin, goal]
     end
     column :motivation
     column :points

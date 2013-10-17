@@ -23,7 +23,7 @@ class Goal < ActiveRecord::Base
   has_many :micro_goals, dependent: :destroy
   has_many :proofs, through: :micro_goals
 
-  scope :goals_today, where(:completion_date => Date.today)
+  scope :goals_today, where(:completion_date => (Date.today..(Date.today+7)))
 
   VERBS = %w[learn visit become stop start lose make solve improve meet build]
 

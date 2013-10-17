@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   has_many :goals, dependent: :destroy
   has_many :micro_goals, through: :goals
 
-  scope :new_users, where(:created_at => Date.today)
+  scope :new_users, where(:created_at => ((Date.today-7)..Date.today))
 
   mount_uploader :image, ImageUploader
 

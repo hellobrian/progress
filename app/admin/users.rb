@@ -1,9 +1,9 @@
 ActiveAdmin.register User do
-  scope :new_users
+  scope "New Users", :new_users
 
   index do
     column :id do |user|
-      link_to user.id, admin_user_path(user)
+      link_to user.id, [:admin, user]
     end
     column :first_name
     column :last_name
