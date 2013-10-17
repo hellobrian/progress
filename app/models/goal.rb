@@ -23,6 +23,8 @@ class Goal < ActiveRecord::Base
   has_many :micro_goals, dependent: :destroy
   has_many :proofs, through: :micro_goals
 
+  scope :goals_today, where(:completion_date => Date.today)
+
   VERBS = %w[learn visit become stop start lose make solve improve meet build]
 
   after_create :points_new_goal

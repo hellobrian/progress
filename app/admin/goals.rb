@@ -1,4 +1,6 @@
 ActiveAdmin.register Goal do
+  scope "Today's Goals",:goals_today
+
   index do
     column :user_id
     column :verb, :sortable => :verb do |goal|
