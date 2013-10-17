@@ -3,26 +3,23 @@
 </h2> 
 <ul class="steps">
   <% @micro_goals.each do |m| %>
-    <% 2.times do %>
-      <li class="big-line">&nbsp;</li>
-    <% end %>
+    <li class="big-line">&nbsp;</li>
     <% if m.completed == nil %>
       <li class="step-incomplete">
         <div.title>
           <p><%= m.title.capitalize %></p>
           <%= link_to 'Done!', new_micro_goal_proof_path(m) %>
         </div> 
-
-
       </li>
       <li class="step-date"><%= m.completion_date.strftime("%A, %b, %e, %Y") %>
         <br>
-      </li>
+      </li> 
     <% else %>
       <li class="step-complete">
         <%= m.title.capitalize %>
       </li>
     <% end %>
+    <li class="big-line">&nbsp;</li>
   <% end %>
 </ul> 
 
