@@ -50,19 +50,13 @@ ul.steps {
     background-color: lightGreen; 
     width: 20%;
     margin-left: 40%;
+    margin-bottom: 10px;
     padding: 10px;
-    box-shadow: none;
-    transition: 0.14s;
-    opacity: 0.9;
+    box-shadow: 0px 10px 0px #73be73;
+    opacity: 1;
     div#proof p {
       background-color: white;
       padding: 5px;
-    }
-    &:hover {
-      transition: 0.14s;
-      opacity: 1;
-      background-color: lightGreen;
-      box-shadow: 0px 10px 0px #73be73;
     }
   }
   li.step-date {
@@ -88,7 +82,7 @@ ul.steps {
     margin-left: 25%;
     div.text {
       padding-top: 10px;
-      border: 10px solid tomato;
+      border: 10px solid #54c290;
       font-weight: 200;
       background-color: white;
       width: 50%;
@@ -96,6 +90,8 @@ ul.steps {
       box-shadow: 0px 10px 20px grey;
     }
     p.main-goal {
+      margin-top: -10px;
+      margin-bottom: -5px;
       font-size: 25px;
       font-weight: bold;
     }
