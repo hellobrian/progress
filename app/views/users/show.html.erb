@@ -2,28 +2,44 @@
   <h1 class="name"><%= "#{@user.first_name.upcase} #{@user.last_name.upcase}" %></h1>
 </div>
   <div class="edit">
-    <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-profile tiny button expand" %>
+    <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-profile tiny button expand secondary" %>
   </div>
 
-<div class="profile-image">
-  <%= image_tag @user.image.url(:header).to_s %>
+
+
+<div class="small-2 large-4 columns">
+  <%= image_tag @user.image.url(:header).to_s, class: "image" %>
 </div>
-  
-  <!-- <div class="goals-list">
-    <a href="#" data-dropdown="drop2" class="button expand dropdown">All Goals</a> -->
-    <!-- <ul id="drop2" class="f-dropdown content medium" data-dropdown-content> -->
-    
-    <div class="goals-list">
-    <fieldset class="fieldset">
-    <legend>My Goals</legend>
+
+
+
+<section class="small-4 large-8 columns">
+
+  <fieldset class="user-status">
+    <legend class="legend-border">Status</legend>
+    <div class="small-6 large-6 columns status-center">
+      Status: <%= @user.status %>
+    </div>
+    <div class="small-6 large-6 columns">
+      Points Achieved: <%= @user.points %>
+    </div>
+
+    <!-- ul>
+      <li class="float-left">Status: <%= @user.status %></li>
+      <li class="float-left">Points Achieved: <%= @user.points %></li>
+    </ul> -->
+  </fieldset>
+
+  <fieldset class="goal-list">
+    <legend class="legend-border">My Goals</legend>
     <ul>
       <% @user.goals.each do |goal| %>
-        <li><%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), 
-        class: "button secondary list-items" %></li>
+        <li><%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), class: "small button float-left" %></li>
       <% end %>
     </ul>
   </fieldset>
-  </div>
+
+</section>
 
 
 <% @user.inspect %>
