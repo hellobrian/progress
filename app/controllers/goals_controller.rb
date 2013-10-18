@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
     if @goal.save
       redirect_to user_path(@goal.user_id), :notice => "Goal Created, Add some micogoals."
     else
-      render :new
+      render :new, :notice => "Please fill in all the required fields"
     end
   end
 

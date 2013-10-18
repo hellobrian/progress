@@ -5,3 +5,7 @@
 $('div.alert-box.alert').on('click', function(){
   $(this).slideUp();
 });
+
+$('div.alert-box').on('click', function(){
+  $(this).slideUp();
+});
