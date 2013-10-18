@@ -17,6 +17,14 @@
         <div class="small-8 columns">
           <%= password_field_tag 'password' %>  
         </div>
+
+        <div class="small-5 columns">
+          <%= check_box_tag :remember_me, 1, params[:remember_me], :class => 'right inline' %>
+        </div>
+        <div class="small-7 columns">
+          <%= label_tag :remember_me %>
+        </div>
+       
         <div class="small-4 columns"></div>
         <div class="small-8 columns">
           <%= submit_tag "Log in", :class => "tiny button" %>
