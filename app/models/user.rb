@@ -13,6 +13,8 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  image            :string(255)
+#  status           :string(255)
+#  points           :integer
 #
 
 class User < ActiveRecord::Base
