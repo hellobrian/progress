@@ -25,9 +25,9 @@
 // User Profile
 
 div.profile-image {
-  width: 100%;
   float: left;
-  opacity: 0.85;
+  width: 100%;
+  opacity: 0.9;
   h1.name {
     color: white;
     background-color: black;
@@ -45,7 +45,7 @@ div.profile-image {
     }
   }
   div.goals-list {
-    width: 50%;
+    width: 15em;
     margin-left: 20%;
     fieldset.fieldset {
       float: right;

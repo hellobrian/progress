@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       UserMailer.welcome_email(@user).deliver
-      redirect_to root_url, :notice => "Account Created"
+      redirect_to new_goal_path, :notice => "Make A Goal!"
     else
       render :new, :alert => "Please try again"
     end
