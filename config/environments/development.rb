@@ -17,7 +17,7 @@ Progress::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # set-up letter_opener as the mail delivery method
-  config.action_mailer.default_url_options = { host: "localhost:3000"}
+  config.action_mailer.default_url_options = { host: "localhost:4000"}
   config.action_mailer.delivery_method = :letter_opener
 
   # Print deprecation notices to the Rails logger

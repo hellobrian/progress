@@ -1,4 +1,6 @@
-<%= render "layouts/goal_show" %>
+<% cache do %>
+  <%= render "layouts/goal_show" %>
+<% end %>
 
 <% @micro_goal = MicroGoal.new %>
 <% @proof = Proof.new %>
