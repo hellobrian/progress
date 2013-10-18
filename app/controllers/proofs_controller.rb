@@ -11,9 +11,9 @@ class ProofsController < ApplicationController
     @proof.micro_goal_id = @micro_goal.id
 
     if @proof.save
-      redirect_to goal_path(@micro_goal.goal_id), :notice => "Successfully created Proof"
+      redirect_to goal_path(@micro_goal.goal_id)
     else
-      render :new
+      render :new, :alert => "Please submit an image and/or write something (click to dismiss)"
     end
   end
 
