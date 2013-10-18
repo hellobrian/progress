@@ -5,3 +5,8 @@
 $('.proof').click(function(){
   $(this).find('.simple_overlay').fadeToggle();
 });
+
+$('a.details').on('click', function(){
+  $(this).parent().find('div#proof').slideToggle();
+  console.log("hello");
+});

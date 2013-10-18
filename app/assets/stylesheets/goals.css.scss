@@ -72,6 +72,15 @@ ul.steps {
       }   
     }
   }
+  li.details {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: -1px;
+    margin-bottom: -13px;
+    &.details {
+      background-color: transparent;
+    }
+  }
   li.step-date {
     background-color: orange; 
     width: 20%;

@@ -17,12 +17,19 @@
         <br>
       </li> 
     <% else %>
+
       <li class="step-complete">
         <h6 class="title"><%= m.title.capitalize %></h6>
-        <div id="proof">
-          <p><%= m.proof.lesson %></p>
+
+        
+        <div class="whole-completed-step">
+          <div id="proof">
+            <p class="lesson"><%= m.proof.lesson %></p>
+          </div>
+          <%= link_to "Details", '#', class: "details button tiny expand" %>
         </div>
       </li>
+
     <% end %>
     <li class="big-line">&nbsp;</li>
   <% end %>
