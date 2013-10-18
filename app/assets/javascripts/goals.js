@@ -6,7 +6,10 @@ $('.proof').click(function(){
   $(this).find('.simple_overlay').fadeToggle();
 });
 
+// $('#new_goal.custom').on("ajax:success", function(e, data, status, xhr){
+  
+// })
+
 $('a.details').on('click', function(){
-  $(this).parent().find('div#proof').slideToggle();
-  console.log("hello");
+  $(this).parent().find('div#proof').slideToggle(300);
 });

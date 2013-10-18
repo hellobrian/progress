@@ -1,7 +1,3 @@
-
-<!-- <h1>I want to (verb) (title) <- jQuery keyup event</h1> -->
-
-
 <%= form_for @goal, :html => { :class => "custom"} do |f| %>
   <div class="row">
     <div class="large-10 columns">
@@ -18,17 +14,12 @@
           </div>
         </div>
         
-<!--         <div class="row">
-          <div class="large-10 columns"> -->
+      <fieldset>
+        <legend>blah</legend>
+        <%= f.text_field :title, size: 140, placeholder: "eg. French", 
+       class: "text_field" %>
+      </fieldset>
 
-            <fieldset>
-              <legend>blah</legend>
-              <%= f.text_field :title, size: 140, placeholder: "eg. French", 
-             class: "text_field" %>
-            </fieldset>
-             
-<!--           </div>
-        </div> -->
       </fieldset>
 
       <fieldset>

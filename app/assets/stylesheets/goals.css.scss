@@ -42,7 +42,6 @@ ul.steps {
       transition: 0.14s;
       opacity: 1;
       background-color: #fba69c;
-      box-shadow: 100px 0px 0px salmon;
     }
   }
 
@@ -63,9 +62,10 @@ ul.steps {
     }
     div#proof p {
       background-color: white;
-      padding: 5px;
+      padding: 10px;
       box-shadow: none;
       transition: 0.14s;
+      font-family: "Arapey", "Times", "Helvetica", serif;
       &:hover {
         box-shadow: 0 5px 20px black;
         transition: 0.14s;  
@@ -95,28 +95,9 @@ ul.steps {
     }
   }
   li div.add-microgoal {
-    width: 10%;
-    margin-left: 45%;
+    width: 20%;
+    margin-left: 40%;
     margin-bottom: -23px
-  }
-  li.main-goal {
-    width: 50%;
-    margin-left: 25%;
-    div.text {
-      padding-top: 10px;
-      border: 10px solid #54c290;
-      font-weight: 200;
-      background-color: white;
-      width: 50%;
-      margin-left: 25%;
-      box-shadow: 0px 10px 20px grey;
-    }
-    p.main-goal {
-      margin-top: -10px;
-      margin-bottom: -5px;
-      font-size: 25px;
-      font-weight: bold;
-    }
   }
 }
 
