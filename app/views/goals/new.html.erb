@@ -1,4 +1,5 @@
-<%= form_for @goal, :html => { :class => "custom"} do |f| %>
+
+<%= simple_form_for @goal, :html => { :class => "custom"} do |f| %>
   <div class="row">
     <div class="large-10 columns">
       <fieldset class="all-verbs">
@@ -7,16 +8,16 @@
           <div class="large-12 columns">
             <% Goal::VERBS.each do |v| %>
             <div class="verb">
-              <%= f.label v -%>
-              <%= f.radio_button :verb, v, class: "radio_button" %>
+              <%= f.label v %>
+              <%= f.radio_button :verb, class: "radio_button" %>
             </div>
             <% end %>
           </div>
         </div>
         
       <fieldset>
-        <legend>blah</legend>
-        <%= f.text_field :title, size: 140, placeholder: "eg. French", 
+        <legend>Write the rest of your Goal</legend>
+        <%= f.input :title, as: :text, size: 140, placeholder: "eg. French", 
        class: "text_field" %>
       </fieldset>
 
@@ -24,15 +25,15 @@
 
       <fieldset>
         <legend><h3>Why?</h3></legend>
-        <%= f.text_area :motivation, rows: 7, cols: 100 %>
+        <%= f.input :motivation, as: :text, rows: 7, cols: 100 %>
       </fieldset>
 
       <fieldset>
         <legend><h3>When will you achieve this goal?</h3></legend>
-        <%= f.date_select :completion_date %>
+        <%= f.input :completion_date %>
       </fieldset>
 
-      <%= f.button %>
+      <%= f.button :submit %>
     </div>
   </div>
 <% end %>
