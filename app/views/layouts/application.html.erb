@@ -22,8 +22,9 @@
   </head>
 
   <body>
-    
-    <%= render "layouts/nav" %>  
+    <% cache do %>
+      <%= render "layouts/nav" %>  
+    <% end %>
     <% if flash[:notice] %>
       <p><%= flash[:notice] %></p>
     <% end %>
