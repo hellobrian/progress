@@ -13,10 +13,8 @@
     <li class="big-line">&nbsp;</li>
     <% if m.completed == nil %>
       <li class="step-incomplete">
-        <div.title>
-          <p><%= m.title.capitalize %></p>
-          <%= link_to 'Done!', new_micro_goal_proof_path(m) %>
-        </div> 
+        <h6 class="title incomplete"><%= m.title.capitalize %></h6>
+        <%= link_to 'Done!', new_micro_goal_proof_path(m), class: "success done button tiny expand" %>
       </li>
       <li class="step-date"><%= m.completion_date.strftime("%A, %b, %e, %Y") %>
         <br>
@@ -25,8 +23,6 @@
 
       <li class="step-complete">
         <h6 class="title"><%= m.title.capitalize %></h6>
-
-
 
         <div class="whole-completed-step">
           <div id="proof">

@@ -23,26 +23,36 @@ ul.steps {
     width: 0.5%;
     height: 1em;
     margin-left: 49.5%; 
-    background-color: gray;
+    background-color: lightGray;
   }
 
 
-    a.microgoal {
-      border: 20px solid lightGreen;
+  a.microgoal {
+    border: 20px solid lightGreen;
+    transition: 0.2s;
+    &:hover {
+      transition: 0.2s;
+      box-shadow: 0px 10px 10px gray;
     }
+  }
 
 
   li.step-incomplete {
     background-color: #ccc; 
     width: 20%;
     margin-left: 40%;
+    margin-top: -5px;
     box-shadow: none;
     transition: 0.14s;
-    opacity: 0.7;
     font-size: 20px;
-    &:hover {
-      transition: 0.14s;
-      opacity: 1;
+    h6.title.incomplete {
+      background-color: gray;
+      font-size: 15px;
+      color: white;
+    }
+    a.done {
+      font-size: 12px;
+      width: 50%;
     }
   }
 
@@ -59,7 +69,6 @@ ul.steps {
       color: black;
       padding: 5px;
       margin-bottom: 15px;
-      // text-shadow: 0 2px 10px white;
     }
     div#proof p {
       background-color: white;
