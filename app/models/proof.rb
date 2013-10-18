@@ -11,8 +11,10 @@
 #
 
 class Proof < ActiveRecord::Base
-  attr_accessible :lesson, :micro_goal_id, :picture
+  attr_accessible :lesson, :micro_goal_id, :picture, :image, :remote_image_url
   belongs_to :micro_goal
+
+  mount_uploader :image, ImageUploader
 
 
   validates :lesson, presence: true
