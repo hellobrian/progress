@@ -8,7 +8,7 @@
             <% Goal::VERBS.each do |v| %>
             <div class="verb">
               <%= f.label v %>
-              <%= f.radio_button :verb, class: "radio_button" %>
+              <%= f.radio_button :verb, v, class: "radio_button" %>
             </div>
             <% end %>
           </div>
