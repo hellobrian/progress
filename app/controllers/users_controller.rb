@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       UserMailer.welcome_email(@user).deliver
-      redirect_to new_goal_path, :notice => "Make A Goal!"
+      redirect_to new_goal_path
     else
       render :new, :alert => "Please try again"
     end
