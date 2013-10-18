@@ -1,27 +1,31 @@
-<div class="profile-image" style="background: url(<%= @user.image.url(:header).to_s %>) 45% no-repeat;">
-
+<div>
   <h1 class="name"><%= "#{@user.first_name.upcase} #{@user.last_name.upcase}" %></h1>
+</div>
   <div class="edit">
     <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-profile tiny button expand" %>
   </div>
 
-
-
-
-
-
+<div class="profile-image">
+  <%= image_tag @user.image.url(:header).to_s %>
+</div>
   
-  <div class="goals-list">
-    <a href="#" data-dropdown="drop2" class="button expand dropdown">All Goals</a>
-    <ul id="drop2" class="f-dropdown content medium" data-dropdown-content>
+  <!-- <div class="goals-list">
+    <a href="#" data-dropdown="drop2" class="button expand dropdown">All Goals</a> -->
+    <!-- <ul id="drop2" class="f-dropdown content medium" data-dropdown-content> -->
+    
+    <div class="goals-list">
+    <fieldset class="fieldset">
+    <legend>My Goals</legend>
+    <ul>
       <% @user.goals.each do |goal| %>
         <li><%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), 
         class: "button secondary list-items" %></li>
       <% end %>
     </ul>
+  </fieldset>
   </div>
-</div>
 
-<%= @user.inspect %>
+
+<% @user.inspect %>
 
 
