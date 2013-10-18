@@ -1,11 +1,15 @@
 <% @user = User.new %>
+<% @goal = Goal.new %>
 <div class="progress-welcome">
   <h2 class="welcome">Progress</h2> 
   <ul class="steps">
     <li class="line">&nbsp;</li>
     <li id="add-new-goal">
       <div id="button-new-goal">
-        <%= link_to "Add New Goal", new_goal_path, class: "large button success add-new-goal1" %>
+
+
+          <a href="#" data-reveal-id="new-goal" class="large button success add-new-goal1">Add New Goal</a>
+
       </div>
     </li>
     <li class="line">&nbsp;</li>
@@ -31,4 +35,6 @@
   <%= render "layouts/user_simpleform" %>
 </div>
 
-
+<div id="new-goal" class="reveal-modal">
+  <%= render "layouts/goal_simpleform" %>
+</div>
