@@ -29,7 +29,7 @@
 
       <fieldset>
         <legend><h3>When will you achieve this goal?</h3></legend>
-        <%= f.input :completion_date %>
+        <%= f.input :completion_date, start_year: Time.now.year %>
       </fieldset>
 
       <%= f.button :submit %>
