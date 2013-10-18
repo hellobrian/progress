@@ -26,11 +26,15 @@
       <%= render "layouts/nav" %>  
     <% end %>
     <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
+      <div class="alert-box">
+        <p><%= flash[:notice] %></p>
+      </div>
     <% end %>
 
     <% if flash[:alert] %>
-      <p><%= flash[:alert] %></p>
+      <div class="alert-box alert">
+        <p><%= flash[:alert] %></p>
+      </div>
     <% end %>
     
     <%= yield %>

@@ -1,13 +1,12 @@
-<% cache do %>
-  <%= render "layouts/goal_show" %>
-<% end %>
+<%= render "layouts/goal_show" %>
+
 
 <% @micro_goal = MicroGoal.new %>
-<% @proof = Proof.new %>
 
 <div id="add-microgoal" class="reveal-modal small">
   <%= render "layouts/microgoal_simpleform" %>
 </div>
+
 
 
 
