@@ -3,13 +3,19 @@
   
     <h1>Prove this step.</h1>
 
-    <%= form_for [@micro_goal, @proof], :html => { :class => "custom"} do |f| %>
+    <%= form_for [@micro_goal, @proof], :html => { :class => "custom", multipart: true} do |f| %>
       <fieldset>
         <legend><h3><%= @micro_goal.title %></h3></legend>
 
         <%= f.label :lesson, "Write about it:" %>
         <br>
         <%= f.text_area :lesson, placeholder: "140 characters or less" %>
+        <br>
+        <%= f.label :image, "Upload an image" %>
+        <%= f.file_field :image %>
+        <br>
+        <%= f.label :remote_image_url, "or image URL" %><br/>
+        <%= f.text_field :remote_image_url %>
         <br>
         <%= f.button %>    
       </fieldset>
