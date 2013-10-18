@@ -2,21 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.ui-datepicker-prev, 
-.ui-datepicker-next {
-  display: none;
-}
+// .ui-datepicker-prev, 
+// .ui-datepicker-next {
+//   display: none;
+// }
 
-select.ui-datepicker-month {
-  margin-top: 5px;
-}
+// select.ui-datepicker-month {
+//   margin-top: 5px;
+// }
 
-tr td {
-  background-color: #ccc;
-  &:hover {
-    background-color: orange;
+// tr td {
+//   background-color: #ccc;
+//   &:hover {
+//     background-color: orange;
+//   }
+//   a.ui-state-default {
+//     color: black;
+//   }
+// }
+
+
+// User Profile
+
+div.profile-image {
+  width: 100%;
+  float: left;
+  opacity: 0.85;
+  h1.name {
+    color: white;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: -10px;
   }
-  a.ui-state-default {
-    color: black;
+  div.edit {
+    width: 20%;
+    margin-left: 40%;
+    margin-top: -2em;
+    a.edit-profile {
+      box-shadow: 0px 4px 10px black;
+    }
   }
+  div.goals-list {
+    width: 50%;
+    margin-left: 20%;
+    fieldset.fieldset {
+      float: right;
+      padding: 2.5em;
+    }
+    a.button.list-items {
+      box-shadow: 0px 1px 10px black;
+      padding: 20px;
+    }
+  }
+
+
 }

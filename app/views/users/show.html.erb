@@ -1,16 +1,21 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="profile-image" style="background: url(<%= @user.image.url(:header).to_s %>) no-repeat;">
 
-<% if @user.image == nil %>
-  <%= image_tag('rails.png') %>
-<% else %>
-  <%= image_tag @user.image.url(:profile).to_s %>
-<% end %>
+  <h1 class="name"><%= "#{@user.first_name.upcase} #{@user.last_name.upcase}" %></h1>
+  <div class="edit">
+    <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-profile tiny button expand" %>
+  </div>
 
-<%= link_to "Edit Profile", edit_user_path(@user), class: "tiny button" %>
+  
+  <div class="goals-list">
+    <fieldset class="fieldset">
+      <legend><h4>Goals</h4></legend>
+      <% @user.goals.each do |goal| %>
+        <%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), 
+        class: "button expand list-items" %> <br>
+      <% end %>
+    </fieldset>
+  </div>
+  
+</div>
 
-<br>
 
-<h2>Goals</h2>
-<% @user.goals.each do |goal| %>
-  <%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), class: "button medium secondary" %> <br>
-<% end %>
