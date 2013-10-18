@@ -52,7 +52,7 @@ ul.steps {
     }
     a.done {
       font-size: 12px;
-      width: 5em;
+      width: 6em;
       font-weight: 200;
     }
   }
@@ -81,6 +81,18 @@ ul.steps {
         box-shadow: 0 5px 20px black;
         transition: 0.14s;  
       }   
+    }
+    div.image {
+      img {
+        width: 50%;
+        border: 5px solid white;
+        margin-bottom: 15px;
+        transition: 0.2s;
+        &:hover {
+          box-shadow: 0 5px 20px black;
+          transition: 0.2s;
+        }
+      }
     }
   }
   li.details {

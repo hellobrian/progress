@@ -14,8 +14,7 @@
     <% if m.completed == nil %>
       <li class="step-incomplete">
         <h6 class="title incomplete"><%= m.title.capitalize %></h6>
-        <%# link_to 'Done!', new_micro_goal_proof_path(m), class: "success done button tiny expand" %>
-        <a href="#" data-reveal-id="add-proof" class="success button expand microgoal">Add Proof</a></div>
+        <a href="#" data-reveal-id="add-proof" class="success done button tiny expand">Add Proof</a></div>
       </li>
       <li class="step-date"><%= m.completion_date.strftime("%A, %b, %e, %Y") %>
         <br>
@@ -24,9 +23,6 @@
       <div id="add-proof" class="reveal-modal small" data-microgoal=<%= m.id %>>
         <%= render "layouts/proof_simpleform", :micro_goal => m %>
       </div>
-
-
-
     <% else %>
 
       <li class="step-complete">
@@ -35,7 +31,7 @@
         <div class="whole-completed-step">
           <div id="proof">
             <p class="lesson"><%= m.proof.lesson %></p>
-            <p><%= image_tag m.proof.image.url(:profile) %></p>
+            <div class="image"><%= image_tag m.proof.image.url(:proof) %></div>
           </div>
           <%= link_to "Details", '#', class: "secondary details button tiny expand" %>
         </div>
