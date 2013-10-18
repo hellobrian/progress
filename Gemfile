@@ -13,6 +13,7 @@ gem 'meta_search', '>= 1.1.0.pre'
 
 
 
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
