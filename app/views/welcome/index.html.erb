@@ -3,6 +3,12 @@
   <h2 class="welcome">Progress</h2> 
   <ul class="steps">
     <li class="line">&nbsp;</li>
+    <li id="add-new-goal">
+      <div id="button-new-goal">
+        <%= link_to "Add New Goal", new_goal_path, class: "large button success add-new-goal1" %>
+      </div>
+    </li>
+    <li class="line">&nbsp;</li>
     <li class="step1">Achieve your goals</li>
     <li class="line">&nbsp;</li>
     <li class="step2">One step at a time.</li>
@@ -13,14 +19,8 @@
 </div>
 
 <div class="homepage-buttons large-3 large-centered columns">
-  <fieldset>
-  <% if current_user %>
-    <%= link_to "Add New Goal", new_goal_path, class: "large button expand success" %>
-  <% else %>
-    <a href="#" data-reveal-id="signup-modal" class="success button expand">Sign Up</a>
-    <a href="#" data-reveal-id="login-modal" class="button expand">Log In</a>
-  <% end %>
-  </fieldset>
+  <a href="#" data-reveal-id="signup-modal" class="success button expand">Sign Up</a>
+  <a href="#" data-reveal-id="login-modal" class="button expand">Log In</a>
 </div>
 
 <div id="login-modal" class="reveal-modal large">
