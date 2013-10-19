@@ -2,26 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .ui-datepicker-prev, 
-// .ui-datepicker-next {
-//   display: none;
-// }
-
-// select.ui-datepicker-month {
-//   margin-top: 5px;
-// }
-
-// tr td {
-//   background-color: #ccc;
-//   &:hover {
-//     background-color: orange;
-//   }
-//   a.ui-state-default {
-//     color: black;
-//   }
-// }
-
-
 // User Profile
 
 h1.name {
@@ -43,42 +23,41 @@ div.edit {
 }
 
 .image {
-  // float: left;
-  // width: 100%;
-  // height: auto;
-  // opacity: 0.9;
-  // width: 400px;
   box-shadow: 0px 4px 10px black;
   border: 10px solid white;
   }
 
   .user-status {
-    // float: right;
-    // position: relative;
-    // background-color: green;
-    // width: 100%;
-    // height: auto;
     margin-top: 0px;
     background-color: #ffe184;
     border: 1px solid #B8B8B8;
+    border-radius: 3px;
   }
+
 
   .float-left { 
     float: left;
     margin-left: 10px;
-    list-style-type: none;
     &:hover{
       box-shadow: 0px 4px 10px black;
     }
   }
 
+  .list-style-none {
+    list-style: none;
+  }
+
   .status-center {
     text-align: center;
+    &:hover {
+      box-shadow: 0px 4px 10px black;
+    }
   }
 
   .goal-list {
     background-color: #adadad;
-    border: 1px solid #B8B8B8;    
+    border: 1px solid #B8B8B8;
+    border-radius: 3px;   
   }
 
   legend.legend-border {
@@ -86,8 +65,3 @@ div.edit {
     box-shadow: 0px 4px 10px black;
     padding: 3px;
   }
-
-  // a.button.list-items {
-  //     box-shadow: 0px 1px 10px black;
-  //     padding: 20px;
-  //   }

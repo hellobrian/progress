@@ -20,19 +20,14 @@
     <div class="small-6 large-6 columns status-center">
       Status: <%= @user.status %>
     </div>
-    <div class="small-6 large-6 columns">
+    <div class="small-6 large-6 columns status-center">
       Points Achieved: <%= @user.points %>
     </div>
-
-    <!-- ul>
-      <li class="float-left">Status: <%= @user.status %></li>
-      <li class="float-left">Points Achieved: <%= @user.points %></li>
-    </ul> -->
   </fieldset>
 
   <fieldset class="goal-list">
     <legend class="legend-border">My Goals</legend>
-    <ul>
+    <ul class="list-style-none">
       <% @user.goals.each do |goal| %>
         <li><%= link_to "#{goal.verb.capitalize} #{goal.title}", goal_path(goal.id), class: "small button float-left" %></li>
       <% end %>
