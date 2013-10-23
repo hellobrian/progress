@@ -14,5 +14,6 @@ $('div#proof').hide(300);
 
 $('a.details').on('click', function(){
   $(this).parent().find('div#proof').slideToggle(300);
+  return false;
 });
 
