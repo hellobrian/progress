@@ -82,16 +82,15 @@ ul.steps {
         transition: 0.14s;  
       }   
     }
-    div.image {
-      img {
-        width: 100%;
-        border: 5px solid white;
-        margin-bottom: 15px;
+    
+    img.proof-image {
+      width: 100%;
+      border: 15px solid white;
+      margin-bottom: 15px;
+      transition: 0.2s;
+      &:hover {
+        box-shadow: 0 5px 20px black;
         transition: 0.2s;
-        &:hover {
-          box-shadow: 0 5px 20px black;
-          transition: 0.2s;
-        }
       }
     }
   }

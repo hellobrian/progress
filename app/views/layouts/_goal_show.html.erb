@@ -41,7 +41,7 @@
               <%= m.proof.lesson %>
             </p>
             
-            <div class="image"><%= image_tag m.proof.image.url(:proof) %></div>
+            <%= image_tag m.proof.image.url(:proof), class: "proof-image" %>
           </div>
           <%= link_to "Details", '#', class: "secondary details button tiny expand" %>
         </div>
