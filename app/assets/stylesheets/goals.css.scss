@@ -83,13 +83,14 @@ ul.steps {
       }   
     }
 
-  img.proof-image {
-    width: 100%;
-    border: 15px solid white;
-    margin-bottom: 15px;
-    transition: 0.2s;
-    &:hover {
-      box-shadow: 0 5px 20px black;
+    img.proof-image {
+      width: 100%;
+      border: 15px solid white;
+      margin-bottom: 15px;
+      transition: 0.2s;
+      &:hover {
+        box-shadow: 0 5px 20px black;
+      }
     }
   }
   
