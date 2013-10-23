@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
+# gem 'ruby', '2.0.0'
 # gem 'sqlite3'
 gem 'pg' # replacing sqlite3 with PostgreSQL
+# gem 'rails_12factor', '0.0.2', group: :production
 gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick'
