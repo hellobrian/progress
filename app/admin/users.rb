@@ -1,4 +1,4 @@
-ActiveAdmin.register Users do
+ActiveAdmin.register User do
   scope "New Users", :new_users
 
   index do
