@@ -24,11 +24,10 @@
         <a href="#" data-reveal-id="add-proof" class="success done button tiny expand">Add Proof</a>
       </li>
       <li class="step-date"><%= m.completion_date.strftime("%A, %b, %e, %Y") %>
-        
       </li> 
-      
 
-      <div id="add-proof" class="reveal-modal small" data-microgoal=<%= m.id %>>
+
+      <div id="add-proof" class="reveal-modal small">
         <%= render "layouts/proof_simpleform", :micro_goal => m %>
       </div>
     <% else %>
