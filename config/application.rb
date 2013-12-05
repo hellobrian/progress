@@ -70,5 +70,6 @@ module Progress
     #   g.test_framework :rspec, :fixture => false
     # end
     # config.assets.paths << Rails.root.join("#{Rails.root}/app/assets/fonts")
+    config.assets.initialize_on_precompile = false
   end
 end
