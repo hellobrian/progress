@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
-# gem 'ruby', '2.0.0'
-# gem 'sqlite3'
-gem 'pg' # replacing sqlite3 with PostgreSQL
-# gem 'rails_12factor', '0.0.2', group: :production
+
+
+
+gem 'pg'
+gem 'rails_12factor'
+
+
 gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick'
@@ -22,7 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
   gem 'jquery-ui-rails'
-  gem 'ui_datepicker-rails3'
+  # gem 'ui_datepicker-rails3'
 end
 
 
@@ -47,3 +50,5 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+ruby '2.0.0'
