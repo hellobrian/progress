@@ -1,3 +1,106 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2.welcome {
+  font-family: "Helvetica", "Montserrat", sans-serif;
+  font-size: 300%;
+  padding: 50px 50px 20px 50px;
+  margin-top: -10px;
+  margin-bottom: 35px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  opacity: 0.9;
+  box-shadow: 0 10px 0px #323232;
+  transition: 0.14s;
+}
+
+div#button-new-goal {
+  margin-bottom: -25px;
+  width: 50%;
+  margin-left: 25%; 
+  a.button.add-new-goal1 {
+    width: 70%;
+    transition: 0.1s;
+    border: 20px solid #81d681;
+    &:hover {
+      border: 10px solid white;
+      box-shadow: 0px 5px 0px #ff3232;
+      transition: 0.1s;
+      text-shadow: 0px 2px 5px black;
+    }
+  }
+}
+
+ul.steps {
+  text-align: center;
+  font-size: 100%;
+  
+
+  li.line {
+    width: 0.3%;
+    margin-left: 49.7%;
+    height: 2em; 
+    background-color: gray;
+  }
+
+  li.step1 {
+    background-color: salmon; 
+    width: 10%;
+    margin-left: 45%;
+    padding: 10px;
+    transition: 0.14s;
+    box-shadow: 0px 10px 0px #e17366;
+    margin-bottom: 10px;
+    &:hover {
+      border: 5px solid white;
+      box-shadow: 0px 5px 0px #ff3232;
+      transition: 0.1s;
+      opacity: 1;
+      margin-bottom: 5px;
+    }
+  }
+  li.step2 {
+    background-color: orange; 
+    width: 10%;
+    margin-left: 45%;
+    padding: 10px;
+    box-shadow: 0px 10px 0px #e59400;
+    margin-bottom: 10px;
+    &:hover {
+      border: 5px solid white;
+      box-shadow: 0px 5px 0px #ff3232;
+      transition: 0.1s;
+      opacity: 1;
+      margin-bottom: 5px;
+    }
+  }
+  li.step3 {
+    background-color: turquoise;
+    width: 10%;
+    margin-left: 45%;
+    padding: 10px;
+    opacity: 0.9;
+    box-shadow: 0px 10px 0px #39c9bb;
+    margin-bottom: 10px;
+    border: none;
+    transition: 0.1s;
+    &:hover {
+      border: 5px solid white;
+      box-shadow: 0px 5px 0px #ff3232;
+      transition: 0.1s;
+      opacity: 1;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+div.homepage-buttons {
+  margin-top: -20px;
+  background-color: #c7f6c7;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: -5px;
+}

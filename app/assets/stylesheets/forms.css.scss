@@ -1,0 +1,43 @@
+fieldset.user-info {
+  width: 100%;
+}
+
+fieldset.user {
+  width: 100%;
+  div.input {
+    width: 100%;
+  }
+}
+
+fieldset.dob-profile {
+  width: 100%;
+  div.user_date_of_birth {
+    float: left;
+    width: 45%;
+  }
+  div.profile-pic, div.create {
+    float: right; 
+    width: 45%;
+  }
+}
+
+
+// Who are you? -------------------
+
+.verb {
+  float: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 20%;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/// NEW GOAL
+
+label.verb {
+  float: left;
+}
