@@ -13,10 +13,6 @@
         </fieldset>
         <fieldset class="dob-profile">
           <%= f.input :date_of_birth, start_year: 1950 %>       
-          <div class="profile-pic">
-            <%= f.input :image, label: "Profile Pic" %>
-            <%= f.input :remote_image_url, label: "link to image url" %>
-          </div>
           <div class="create">
             <%= f.button :submit, class: "create" %>
           </div>
